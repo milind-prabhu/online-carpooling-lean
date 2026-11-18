@@ -5,12 +5,15 @@ Run from the project root after `lake env lean blueprint/Extract.lean`.
 Graphviz is the only external rendering dependency. No browser/network is needed.
 """
 from pathlib import Path
-import collections, html, json, re, subprocess, textwrap
+import argparse, collections, html, json, re, subprocess, textwrap
 
 ROOT = Path(__file__).resolve().parents[1]
 HERE = ROOT / 'blueprint'
 OUT = HERE / 'generated'
 OUT.mkdir(exist_ok=True)
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--overview-only', action='store_true', help='Rebuild the overview while retaining existing detailed views.')
+args = parser.parse_args()
 raw = {r['name']: r for r in json.loads((HERE/'compiled_dependencies.json').read_text())}
 source = json.loads((HERE/'source_index.json').read_text())
 records = {n: dict(raw[n], **source[n]) for n in source if n in raw}
@@ -34,6 +37,7 @@ friendly = {
  'theorem_1_2_refined_greedy': 'Theorem 1.2 · Refined\nStochastic upper bound',
  'equal_pair_of_bounded_integer_positions': 'Equal-position pigeonhole lemma',
  'equal_endpoint_lower_bound': 'Equal-endpoint potential argument',
+ 'charged_potential_lower_bound': 'Forced potential growth',
  'adversarial_lower_bound_four_cubes': 'Adversarial cube-root lower bound',
  'selected_matching_probability': 'Adaptive prescription likelihood',
  'adaptive_prescription_amplification': 'Adaptive second-moment amplification',
@@ -54,10 +58,15 @@ friendly = {
  'StochasticLowerGuarantee': 'Precise lower-bound guarantee',
 }
 full = lambda n: 'Carpooling.'+n
-overview_names = [full(n) for n in friendly if n not in {
- 'Request','uniformProb','lemma_3_1','tree_like_surplus_bound','Witness.spanning',
- 'stochastic_basic_high_probability','stochastic_refined_high_probability',
- 'UnitOnlineRule','StochasticLowerGuarantee'}]
+# Keep the default map focused on the main results and their key ingredients.
+# Omitted helper paths are still resolved from compiled Lean dependencies below.
+overview_names = [full(n) for n in [
+ 'spreadness', 'potential_bound', 'theorem_1_1',
+ 'Witness.families_card_bound', 'stochastic_upper_tail', 'stochastic_refined_tail',
+ 'theorem_1_2_basic_greedy', 'theorem_1_2_refined_greedy',
+ 'charged_potential_lower_bound', 'adaptive_prescription_amplification',
+ 'weighted_cliques_lower_probability', 'theorem_1_3',
+]]
 assert all(n in records for n in overview_names), set(overview_names)-records.keys()
 mains = {full(n) for n in ['theorem_1_1','theorem_1_2_basic_greedy','theorem_1_2_refined_greedy','theorem_1_3']}
 
@@ -127,8 +136,9 @@ views={
      'OnlineLower','FinalLower','LowerCorollaries','VaryingSchedule','ChargedLower','PrefixCuts','Pushforward'}]),
  'full':('All source-named declarations',sorted(records)),
 }
-graph_data={}
+graph_data=json.loads((OUT/'graph_data.json').read_text())['views'] if args.overview_only else {}
 for key,(title,chosen) in views.items():
+    if args.overview_only and key != 'overview': continue
     edges,paths=displayed_dependencies(chosen)
     edges,acyclic=reduce_edges(chosen,edges)
     edge_list=[{'from':node_ids[a],'to':node_ids[b],'path':paths[(a,b)]} for a,b in sorted(edges)]

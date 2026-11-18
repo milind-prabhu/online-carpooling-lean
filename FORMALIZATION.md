@@ -17,7 +17,7 @@ or native-decision shortcuts. The transitive axiom audit reports only Lean's sta
 ## Interactive dependency blueprint
 
 Open [the standalone proof blueprint](blueprint/generated/Online_Carpooling_Blueprint.html)
-for a PFR-style clickable dependency graph. The overview has 33 nodes; the full view
+for a PFR-style clickable dependency graph. The overview has 12 nodes; the full view
 has all 420 explicitly named source declarations. Click a node to inspect its compiled
 Lean statement, source and proof dependencies. Detailed deterministic, stochastic-upper,
 and stochastic-lower views are included, along with PDF, SVG and PNG exports.

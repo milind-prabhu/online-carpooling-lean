@@ -125,8 +125,8 @@
     "source_named_declarations": 420,
     "views": {
       "overview": {
-        "nodes": 33,
-        "arrows": 35
+        "nodes": 12,
+        "arrows": 11
       },
       "deterministic": {
         "nodes": 52,
@@ -146,7 +146,7 @@
       }
     },
     "dependencies": "compiled Lean constant types and values; collapsed omitted helpers; transitive reduction",
-    "validation": "all 1288 displayed arrows have verified dependency paths; 420 nonempty compiled statements; JavaScript syntax passed",
+    "validation": "all 1264 displayed arrows have verified dependency paths; 420 nonempty compiled statements; hover summaries retained",
     "inspiration": "https://teorth.github.io/pfr/blueprint/dep_graph_document.html"
   }
 }
