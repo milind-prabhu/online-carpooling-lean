@@ -1,0 +1,116 @@
+import Carpooling
+
+#print axioms Carpooling.topSum_step
+#print axioms Carpooling.spreadness
+#print axioms Carpooling.potential_bound
+#print axioms Carpooling.positive_cube_bound
+#print axioms Carpooling.lemma_3_1
+#print axioms Carpooling.theorem_1_1
+#print axioms Carpooling.greedy_requests_upper_bound
+#print axioms Carpooling.closed_component_bound
+
+#check Carpooling.theorem_1_1
+#check Carpooling.lemma_3_1
+#check Carpooling.greedy_requests_upper_bound
+#check Carpooling.closed_component_bound
+
+#print axioms Carpooling.lemma_4_2
+#print axioms Carpooling.local_tree_like_bound
+#print axioms Carpooling.Witness.spanning
+#print axioms Carpooling.occurrence_probability_bound
+#print axioms Carpooling.Witness.families_card_bound
+#print axioms Carpooling.refined_cover_of_forest
+#print axioms Carpooling.stochastic_upper_tail
+#print axioms Carpooling.stochastic_refined_tail
+#print axioms Carpooling.stochastic_refined_high_probability
+#print axioms Carpooling.regular_graph_stochastic_basic
+#print axioms Carpooling.regular_graph_stochastic_batched
+#print axioms Carpooling.regular_graph_stochastic_refined
+#print axioms Carpooling.regular_graph_stochastic_refined_batched
+#print axioms Carpooling.aggregate_bound_outside_bad_event
+#print axioms Carpooling.refined_aggregate_bound
+
+#check Carpooling.regular_graph_stochastic_basic
+#check Carpooling.regular_graph_stochastic_refined
+#check Carpooling.regular_graph_stochastic_refined_batched
+#check Carpooling.stochastic_refined_tail
+#check Carpooling.refined_aggregate_bound
+
+#print axioms Carpooling.theorem_1_2_basic
+#print axioms Carpooling.theorem_1_2_refined
+#print axioms Carpooling.theorem_1_2_basic_greedy
+#print axioms Carpooling.theorem_1_2_refined_greedy
+#print axioms Carpooling.states_prefix_congr
+#check Carpooling.theorem_1_2_basic_greedy
+#check Carpooling.theorem_1_2_refined_greedy
+
+#print axioms Carpooling.UnitMove.potential_change
+#print axioms Carpooling.equal_pair_of_bounded_integer_positions
+#print axioms Carpooling.equal_endpoint_lower_bound
+#print axioms Carpooling.lowerStates_prefix_congr
+#print axioms Carpooling.adversarial_cubic_lower_bound
+#print axioms Carpooling.adversarial_lower_bound_four_cubes
+#print axioms Carpooling.adaptive_matching_probability
+#print axioms Carpooling.selectedMatchingEvent_card
+#print axioms Carpooling.selected_matching_probability
+#print axioms Carpooling.complete_graph_local_lower_probability
+#print axioms Carpooling.clique_local_lower_probability
+#check Carpooling.adversarial_lower_bound_four_cubes
+#check Carpooling.selected_matching_probability
+#check Carpooling.clique_local_lower_probability
+
+#print axioms Carpooling.embedded_equal_endpoint_lower_bound
+#print axioms Carpooling.embedded_local_lower_probability
+#print axioms Carpooling.pairwise_event_amplification
+#print axioms Carpooling.adaptive_prescription_amplification
+#print axioms Carpooling.charged_potential_lower_bound
+#print axioms Carpooling.exists_prefix_cut
+#print axioms Carpooling.scheduled_targets_lower_probability
+#print axioms Carpooling.scheduled_cliques_lower_probability
+#print axioms Carpooling.scheduled_targets_lower_probability_of_counts
+#check Carpooling.embedded_local_lower_probability
+#check Carpooling.adaptive_prescription_amplification
+#check Carpooling.scheduled_targets_lower_probability_of_counts
+
+#print axioms Carpooling.indicator_sum_variance
+#print axioms Carpooling.occupancy_variance
+#print axioms Carpooling.underfilled_probability
+#print axioms Carpooling.few_good_labels_probability
+#print axioms Carpooling.uniformProb_mixture_bound
+#print axioms Carpooling.uniformProb_equiv_preimage
+#print axioms Carpooling.iid_cliques_lower_probability
+#print axioms Carpooling.disjointCliques_regular
+#print axioms Carpooling.disjointCliques_edge_card
+#print axioms Carpooling.regular_cliques_stochastic_lower
+#print axioms Carpooling.lower_failure_log_bound
+#print axioms Carpooling.regular_cliques_lower_logarithmic
+#check Carpooling.regular_cliques_stochastic_lower
+#check Carpooling.regular_cliques_lower_logarithmic
+
+#print axioms Carpooling.jumpGraph_regular
+#print axioms Carpooling.exists_regular_graph
+#print axioms Carpooling.evaluation_pair_probability
+#print axioms Carpooling.classCount_variance
+#print axioms Carpooling.fewPopulated_probability
+#print axioms Carpooling.scheduled_varying_targets_of_counts
+#print axioms Carpooling.uniformProb_constant_fiber
+#print axioms Carpooling.word_fiber_card
+#print axioms Carpooling.pushforward_discrepancy_iff
+#print axioms Carpooling.sum_regular
+#print axioms Carpooling.mixedPairDecoder_constant_fiber
+#print axioms Carpooling.paddedDecoder_constant_fiber
+#print axioms Carpooling.padded_graph_stochastic_lower
+#print axioms Carpooling.padding_parameters
+#print axioms Carpooling.cubicHeight_spec
+#print axioms Carpooling.cubicHeight_covers
+#print axioms Carpooling.padding_log_compare
+#print axioms Carpooling.padded_failure_log_bound
+#print axioms Carpooling.padded_graph_lower_logarithmic
+#print axioms Carpooling.IntegerRun.first_discrepancy
+#print axioms Carpooling.cubic_log_rate
+#print axioms Carpooling.theorem_1_3
+#print axioms Carpooling.theorem_1_3_with_error
+#print axioms Carpooling.randomized_lower_bound
+#check Carpooling.theorem_1_3
+#check Carpooling.theorem_1_3_with_error
+#print Carpooling.StochasticLowerGuarantee

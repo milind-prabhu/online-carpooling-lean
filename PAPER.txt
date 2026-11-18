@@ -1,0 +1,768 @@
+                                                     The Cube-Root Phenomenon in Online Carpooling
+
+                                               Nikhil Bansal∗        Milind Prabhu†          Sahil Singla‡       Siddharth M. Sundaram§
+
+                                                                                   September 21, 2026
+arXiv:2609.21348v1 [cs.DS] 18 Sep 2026
+
+
+
+
+                                                                                         Abstract
+                                                   We consider the online carpooling problem, where edges arrive online and must be oriented
+                                               immediately while keeping the discrepancy between the indegree and outdegree at each vertex
+                                               small. We prove that the natural Greedy algorithm incurs discrepancy O(min{T 1/3 , n}) after T
+                                               arrivals. This resolves a question of Ajtai et al. [AAN+ 98], who showed that any deterministic
+                                               algorithm must incur Ω(min{T 1/3 , n}) discrepancy, and gave an algorithm with O(min{T 1/2 , n})
+                                               discrepancy.
+                                                   We also show a similar square-root to cube-root improvement in the stochastic setting, where
+                                               O(n) edges are sampled independently from an underlying n-vertex graph G. Formally, we show
+                                               an O((log n)1/3 ) bound for random arrivals from any ∆-regular graph G. When ∆ = Ω((log n)3 ),
+                                               we show the more refined bound of O((log n/ log ∆)1/3 + log log n) on the discrepancy. We
+                                               show that the cube-root term in the previous bound is essential, while the log log n term is
+                                               already known to be √ necessary for random arrivals from complete graphs. The previous upper
+                                               bounds here were O( log n), which follow from the breakthrough works on online discrepancy
+                                               [KRR24, AA26].
+                                                   Our techniques for proving such cube-root-type bounds may be of independent interest,
+                                               as the standard quadratic-potential and subgaussian analyses underlying the previous general
+                                               bounds appear inherently unable to go below square-root-type guarantees.
+
+
+
+
+                                           ∗
+                                              University of Michigan. bansaln@umich.edu. Supported in part by NSF awards CCF-2327011 and CCF-2504995.
+                                           †
+                                              University of Michigan. milindpr@umich.edu. Supported by NSF award CCF-2327011.
+                                            ‡
+                                              School of Computer Science, Georgia Tech. ssingla@gatech.edu. Supported in part by NSF awards CCF-
+                                         2327010 and CCF-2440113.
+                                            §
+                                              School of Computer Science, Georgia Tech. ssundaram38@gatech.edu. Supported in part by NSF awards CCF-
+                                         2327010 and CCF-2440113.
+
+
+                                                                                              1
+1        Introduction
+
+We consider the classical carpooling problem introduced by Fagin and Williams [FW83], and defined
+as follows: We are given a set V of n nodes, and undirected edges arrive online. Upon arrival of an
+edge (i, j), it has to be oriented immediately as either i → j or j → i. The goal is to minimize the
+maximum imbalance between the in-degree and out-degree of any node. Formally, if δt− (i) and δt+ (i)
+denote the number of in-edges and out-edges incident to i at time t, define the signed discrepancy
+of node i as dt (i) := δt− (i) − δt+ (i). The goal is to minimize
+
+                                            max max |dt (i)|.
+                                             t     i
+
+Equivalently, this can be viewed as an online discrepancy minimization problem in Rn , where the
+incoming vectors vt have the form 1(i) − 1(j) for i, j ∈ [n], where 1(i) denotes the i-th standard
+                          to pick signs ϵt ∈ {−1, 1} online to minimize the maximum discrepancy
+basis vector. The goal is P
+maxt ∥dt ∥∞ , where dt = s≤t ϵs vs . We also consider the weighted version of the problem, where
+each edge arrives with a weight and the goal is to minimize the maximum imbalance between
+incoming and outgoing weights.
+Interestingly, despite its simple structure, the carpooling problem captures several more general
+problems and phenomena. For example, Ajtai et al. [AAN+ 98] showed that it is equivalent, up to
+a factor of 2, to general carpooling where arbitrary size hyperedges (representing carpools) arrive
+online, from Pwhich one person must be designated the driver; the “fair share” [FW83] for person i
+is defined as t:i∈et 1/|et |, and we would like to ensure that the number of times any person drives
+stays close to this. In another result, [BRS22] show that the approximability of minimizing the
+maximum flow time on related machines is, up to O(1) factors, the same as offline edge-weighted
+carpooling.
+More generally, the problem is also closely related to several other areas such as the power of two-
+choices [ABKU94, KP06], chip games [ALS+ 89, BLS91], fairness in scheduling and social-networks
+[FW83, AAN+ 98, FKK+ 16], online discrepancy [Bár79, BS20, AT25] and rounding [BRS22, LR26],
+and has received a lot of attention.
+However, despite much interest, there remains a long-standing and fundamental cube-root versus
+square-root gap for the problem — both in the deterministic and the stochastic setting.
+
+Deterministic Setting. Here we consider online carpooling where the algorithm is deterministic
+and the arrivals are adversarial. In their seminal work, Ajtai et al. [AAN+ 98] showed that the
+natural Greedy algorithm, that orients each arriving edge towards the endpoint with smaller dis-
+crepancy, achieves an O(T 1/2 ) discrepancy after T requests.1 On the other hand, they show that any
+deterministic online algorithm must also incur at least Ω(T 1/3 ) discrepancy, provided that T ≤ n3 .
+Coppersmith et al. [CNP+ 11] further showed that Greedy is optimal for this problem. However,
+the asymptotic bound on the discrepancy achieved by Greedy had remained unclear.
+There are two key conceptual reasons for this gap. First, both the lower and upper bounds of
+[AAN+ 98] are based on tracking the standard quadratic potential ∥dt ∥22 . But using this to control
+∥dt ∥∞ is inherently lossy and cannot bridge the T 1/3 versus T 1/2 gap. Second, there is a simple
+Ω(T 1/2 ) lower bound for arbitrary 2-sparse vectors vt of the form a1(i) + b1(j) with a, b ∈ [−1, 1].
+Thus, any sub-square-root upper bound must exploit the additional “combinatorial structure” of
+    1
+        More precisely O(min{T 1/2 , n}).
+
+
+
+                                                       2
+carpooling: the two non-zero coordinates of vt have equal magnitudes and opposite signs. We
+describe these in detail in Section 1.2, as they will be crucial for understanding our ideas.
+
+Stochastic Setting. Here we assume that there is an underlying graph G and at each time step,
+the request is an edge of G sampled uniformly at random. Ajtai et al. [AAN+ 98] considered the case
+where G is the complete graph Kn , and showed that the expected discrepancy is O(log log n) at any
+time; analogous to the power of two-choices phenomenon in load balancing [ABKU94, BCSV00].
+The harder setting of general graphs G was studied by Gupta et al. [GKKS20], who gave an algorithm
+with polylog(T ) discrepancy. They assume that G is known to the algorithm, and use expander
+decomposition techniques together with the ideas of [PTW15] to obtain the bound. Currently, the
+best known bound for general graphs is O(log1/2 T ), which follows from the breakthrough, and
+more general, results of Kulkarni, Reis, and Rothvoss [KRR24] and Aden-Ali [AA26] on online
+discrepancy.
+On the other hand, the best lower bound is Ω(log1/3 T ) [AAN+ 98], which follows directly from
+the deterministic Ω(T 1/3 ) lower bound above: roughly, the random process has sufficiently many
+independent opportunities that one block of Ω(log T ) arrivals realizes the equal-discrepancy choices
+used by the deterministic lower-bound adversary. Closing this log1/3 T versus log1/2 T gap has been
+a natural open question, see e.g., Conjecture 2 in [KRR24].
+
+
+1.1   Our results
+
+Our first result completely resolves the deterministic case by showing that the Greedy algorithm
+itself matches the lower bound of Ajtai et al. [AAN+ 98].
+Theorem 1.1 (Deterministic upper bound). For any sequence of T edge arrivals with weights
+wt ∈ [0, 1] on a graph on n vertices, the Greedy algorithm satisfies
+
+                                   max ∥dt ∥∞ = O min{T 1/3 , n} .
+                                                                 
+                                    t≤T
+
+
+This cube-root upper bound for carpooling is perhaps surprising given the Ω(T 1/2 ) lower bound for
+2-sparse vectors, mentioned previously. Indeed, our analysis will crucially exploit that vectors have
+the form wt (1(i) − 1(j)).
+A key idea is to track a hierarchy of top-r potentials that captures the entire profile of the discrepancy
+vector dt , and use this to prove a refined structural property that we call spreadness. Roughly, this
+says that if the discrepancy ever reaches D at some time t, then at some previous time t′ ≤ t, there
+must be a set of Ω(D) coordinates whose average absolute discrepancy is Ω(D). This forces the
+quadratic potential at that earlier time to be Ω(D3 ); since Greedy’s quadratic potential is always
+O(T ), the desired D = O(T 1/3 ) bound follows.
+Our second result considers the stochastic setting, where we show that a similar cube-root phe-
+nomenon holds for regular graphs with T = O(n) requests.
+Theorem 1.2 (Stochastic upper bound). For T = O(n) edges sampled independently from a ∆-
+regular graph G, there is an algorithm that orients the edges online such that w.h.p. maxt≤T ∥dt ∥∞ =
+O (log n)1/3 . Further, for ∆ = Ω(log3 n) we have the improved bound
+
+                            max ∥dt ∥∞ = O (log n/ log ∆)1/3 + log log n .
+                                                                        
+                                                                                                      (1)
+                             t≤T
+
+
+                                                    3
+This also holds in the edge-weighted setting, and in fact the weights wt may even be chosen by an
+adaptive adversary based on the previous samples e1 , . . . , et−1 .
+
+In particular, this generalizes the bound O(log log n) of [AAN+ 98] for complete graphs to arbitrary
+nΩ(1) -regular graphs.
+We prove a matching lower bound for the cube-root term in (1); the additive log log n term is already
+known to be necessary for complete graphs.
+
+Theorem 1.3 (Stochastic lower bound). For every sufficiently large n and every ∆ = Ω(log n),
+there exists a ∆-regular graph G on n vertices2 such that, for n i.i.d. requests from G, every online
+algorithm has, with probability 1 − o(1),
+
+                                    max ∥dt ∥∞ = Ω((log n/ log ∆)1/3 ).
+                                     t≤n
+
+
+The proof of Theorem 1.2 builds on the witness tree approach of Kenthapadi and Panigrahy [KP06],
+who generalized the classic power of 2-choices in load balancing from complete graphs to general
+∆-regular graphs with T = O(n) arrivals to show an O((log n/ log ∆) + log log n) bound. While the
+(log n/ log ∆) bound is optimal for load-balancing, we can get an improved cube-root dependence
+(log n/ log ∆)1/3 in the discrepancy setting by combining this with the ideas in Theorem 1.1. A
+direct application of Theorem 1.1 only gives the weaker O(log1/3 n) bound. Obtaining the improved
+bound in (1) requires opening the black-box and additional new ideas.
+Open question. Theorem 1.2 suggests that, for T edges sampled independently and uniformly
+from an arbitrary (possibly non-regular) graph G, there is an online algorithm with discrepancy
+O(log1/3 T ). We leave this as an interesting open question.
+
+
+1.2    Overview and Techniques
+
+To motivate our approach, we begin by describing the elegant Ω(T 1/3 ) and O(T 1/2 ) bounds of
+[AAN+ 98] based on the quadratic potential, and see the reasons for this gap. For simplicity, we
+assume throughout this section that all edges have weight 1.
+
+Quadratic potential. Let dt denote P the 2discrepancy vector at the end of time t. Consider the
+                                2
+quadratic potential Φ(t) = ∥dt ∥2 = i dt (i) .
+The key observation is that for an arriving edge et = (i, j) (equivalently the vector vt = 1(i) − 1(j)),
+if dt−1 (i) = dt−1 (j) at its endpoints, then Φ(t) must increase by +2 irrespective of how et is oriented.
+On the other hand, if dt−1 (i) ̸= dt−1 (j), choosing the orientation (sign ϵt for vt ) greedily cannot
+increase Φ. This follows as
+
+                 Φ(t) − Φ(t − 1) = ∥dt−1 + ϵt vt ∥22 − ∥dt−1 ∥22
+                                    = 2ϵt (dt−1 · vt ) + ∥vt ∥22 = −2|dt−1 (i) − dt−1 (j)| + 2.              (2)
+
+
+Previous bounds and limitations. As Φ(t) increases by at most +2    √ per request and Φ(0) = 0,
+we have Φ(t) ≤ 2t ≤ 2T trivially, giving the upper bound ∥dt ∥∞ = O( T ) for each 1 ≤ t ≤ T .
+   2
+    We consider only parameter pairs (n, ∆) for which a ∆-regular graph on n vertices exists; equivalently, ∆ < n
+and n∆ is even.
+
+
+                                                       4
+For the lower bound, fix some time T ≤ n3 , and let h = T 1/3 . We will only request edges (i, j)
+with i, j ∈ [h]. We have a win-win argument. If ∥dt ∥∞ ≥ h/2 for some t ≤ T , we already have the
+Ω(h) lower bound. Else, at each time t all discrepancies lie in (−h/2, h/2) and by pigeonhole, there
+must exist some i, j ∈ [h] with dt−1 (i) = dt−1 (j). Requesting et = (i, j) thus forces Φ to rise by +2,
+eventually giving Φ(T ) = ∥dT ∥22 = 2T = 2h3 . Since dT is supported only on vertices in [h], some
+vertex must have Ω(h) discrepancy.
+Intuitively, the problem is that using a bound on ∥dt ∥22 to infer ∥dt ∥∞ is inherently lossy, as one
+cannot distinguish whether the contribution to ∥dt ∥22 is coming from one large coordinate, or multiple
+large coordinates. This leads to the cube-root versus square-root gap.
+
+Lower bound for 2-sparse vectors. Second, an analysis that treats carpooling requests merely
+as arbitrary bounded 2-sparse vectors cannot yield an o(T 1/2 ) bound. Indeed, there is a trivial
+Ω(T 1/2 ) lower bound for such vectors, already when n = 2 — at each time t, we can always choose
+some unit length vector vt supported on the first two coordinates that is orthogonal to dt−1 . By
+orthogonality, for either choice of sign,
+
+                          ∥dt−1 + ϵt vt ∥22 = ∥dt−1 ∥22 + ∥vt ∥22 = ∥dt−1 ∥22 + 1.
+
+Thus Φ(t) = t, and hence ∥dt ∥∞ = Ω(t1/2 ) as its support has size n = 2.
+
+Deterministic Arrivals and Spreadness. Our main insight is that under the Greedy algorithm,
+there must be times when the ℓ2 -mass in dt must be spread among several coordinates. In particular,
+if the discrepancy ∥dT ∥∞ = D at time T , then at some earlier time t ≤ T there is a set R of Ω(D)
+coordinates whose average absolute discrepancy is Ω(D). We call this the spreadness property. It
+implies, by Cauchy–Schwarz, that
+                                                                             !2
+                                   X               1        X
+                          Φ(t) =        dt (i)2 ≥                 |dt (i)|        = Ω(D3 ).
+                                                  |R|
+                                    i                       i∈R
+
+As Φ(t) ≤ 2t ≤ 2T , this yields D = O(T 1/3 ).
+To show that such a set R must exist at some earlier time, we simultaneously track, for every r,
+the top-r sum Sr (t), defined as the sum of the r largest signed discrepancies at time t. However,
+one serious difficulty is that the mass need not be spread at all at any given time. E.g., even if the
+mass is currently spread, the adversary can give new requests to bring all coordinates back close to
+0, except the one with the largest value (leaving the discrepancy unchanged).
+To handle this we prove a stronger inductive property than spreadness. We track the evolution of
+the Sr (t) over time. We show that if a particle reaches high discrepancy at time T , then, for every
+r, there is a time tr ≤ T at which Sr (tr ) crosses a suitably-chosen threshold. The existence of such
+times where Sr is large is proved via a careful backward induction over time.
+
+Stochastic arrivals. We now describe the key ideas for Theorem 1.2. By dividing the T = O(n)
+requests into O(1) batches of size cn for c ≪ 1, it suffices to prove the bound for such a batch.
+Let Gsamp denote the sampled multigraph, formed by the cn sampled requests. A standard witness
+tree argument shows that w.h.p. every connected component C of Gsamp has O(log n) vertices and
+O(log n) edges. As different components do not interact, one can essentially apply the bound on
+Greedy from Theorem 1.1 to each component individually, which immediately gives the O((log n)1/3 )
+discrepancy bound.
+
+                                                        5
+The stronger bound (1). Proving the stronger bound given by (1) is more subtle, and requires
+two additional key ideas.
+First, adapting the witness-tree framework of Kenthapadi and Panigrahy [KP06], we show that
+when ∆ is large, every connected component C of Gsamp is nearly a tree. In particular, if we view
+C as consisting of a spanning tree with m − 1 edges plus p surplus internal edges, then w.h.p. we
+have m = O(log n) and p = O(log n/ log ∆).
+Second, we exploit this structure and prove a stronger O(p1/3 + log m) bound for such tree-like
+adversarial request sequences, in contrast to the general O((m + p)1/3 ) bound from Theorem 1.1.
+Notice that the cube-root dependence now is only on the surplus edges p, while the dependence on
+m is logarithmic.
+To prove this refined bound, we analyze the effect of edge arrivals differently depending on whether
+they merge two different components, or are already inside some component. To show that only the
+internal edges incur the cube-root dependence, a key idea is to consider another auxiliary carpooling
+instance with one extra vertex, where the discrepancies of the original vertices are shifted by the
+logarithm of the current size of the component containing them. We can then use the analysis for
+Theorem 1.1 on this instance and infer the refined bound. We refer to Section 4 for details.
+
+
+2    Preliminaries
+
+We begin by defining the problem formally, using the discrepancy formulation.
+There are n coordinates indexed by [n] and an unknown time horizon T . At each time t ∈ [T ],
+a request arrives online, specified by a weight wt ∈ [0, 1] and two distinct coordinates it , jt ∈ [n],
+     P algorithm must pick a sign ϵt ∈ {−1, 1}. Let vt denote the vector wt (1(it ) − 1(jt )), and
+and the
+dt = s≤t ϵs vs the discrepancy vector at the end of time t. The goal is to minimize D := maxt ∥dt ∥∞ .
+
+The Greedy algorithm and chip view. We will only consider the Greedy algorithm, which,
+upon the request at time t, if dt−1 (it ) ≤ dt−1 (jt ), chooses ϵt so that:
+
+                      dt (it ) = dt−1 (it ) + wt   and   dt (jt ) = dt−1 (jt ) − wt .              (3)
+
+It will be convenient to view the discrepancies as n chips on the real line, one for each coordinate,
+where each chip i is at position dt (i) at the end of time t. In this chip view, each request picks two
+chips, and Greedy moves the left chip by wt to the right, and the right chip by wt to the left.
+The question is: how far can an adversary push any chip from the origin?
+
+Expanding and contracting moves. For the purpose of our analysis, we will distinguish two
+types of chip moves by Greedy. Consider time t and let i, j denote the requested chips so that
+dt−1 (i) ≤ dt−1 (j). A move is expanding if dt (i) > dt−1 (j), and contracting otherwise. In words,
+a move is expanding if chip i moves to the right of chip j’s previous position. Equivalently, an
+expanding move increases the distance between the two chips i and j. See Figure 1.
+
+
+3    Deterministic Setting
+
+In this section, we prove the bound on Greedy stated in Theorem 1.1.
+
+                                                    6
+                         Contracting move                                    Expanding move
+
+            Before:         i              j           x           Before:           i   j       x
+
+
+
+             After:              i    j                x            After:       j           i   x
+
+Figure 1: Expanding moves increase the distance between the requested chips, whereas contracting
+moves do not. The unrequested chips (marked blue) do not move.
+
+
+In fact, we will show the following slightly stronger result, which allows the starting positions to
+be negative, and bounds the positive discrepancy in terms of expanding moves. This form will be
+useful later in Section 4.
+
+Lemma 3.1. Suppose that initially d0 (i) ≤ 0 for every i ∈ [n], and the request sequence leads to p
+expanding moves. Then for every chip i and every time t, we have dt (i) ≤ min(4p1/3 , n).
+
+By symmetry, this directly implies Theorem 1.1 when all chips start at 0.
+The proof of Lemma 3.1 has two steps. First, we consider a natural quadratic potential, and show
+that it is O(p) at any time. Second, we show that if some chip reaches discrepancy D > 0, then
+at some earlier time there is a set of Ω(D) chips whose average discrepancy is Ω(D). Combining
+these, we obtain the O(p1/3 ) bound. This second statement is the main point of the argument.
+
+
+3.1    Potential and Spreadness
+
+For x ∈ R, write x+ := max{x, 0}. We consider the following potential for the positive discrepancies.
+                                                      n
+                                                      X
+                                          Φ+ (t) :=         (dt (i)+ )2 .
+                                                      i=1
+
+Note that we only sum over chips at non-negative positions. We have the following bound.
+
+Lemma 3.2. If at most p expanding moves have occurred by time t, then Φ+ (t) ≤ 2p.
+
+Proof. Define the function f (x) = x2+ , and note that f is convex.
+Consider a move of weight w from positions a ≤ b to a + w and b − w. If the move is contracting,
+then both a + w and b − w lie in [a, b], and the potential can only decrease by the convexity of f .
+We now show that each expanding move can increase Φ+ by at most 2.
+For all x, y ∈ R we have the inequality, f (x + y) ≤ f (x) + 2x+ y + y 2 . Indeed, for x ≥ 0 the right side
+is (x + y)2 . For x < 0 it is y 2 , while the left side is at most y 2 . Applying this with (x, y) = (a, w)
+and with (b, −w), and using that a+ ≤ b+ , w ∈ [0, 1] gives
+
+                            Φ+ (t) − Φ+ (t − 1) ≤ 2w(a+ − b+ ) + 2w2 ≤ 2.
+
+
+
+
+                                                      7
+                                                                                         P
+Top sums and Spreadness. For a subset of chips R ⊆ [n], let us denote dt (R) :=              i∈R dt (i).
+
+For 1 ≤ r ≤ n, let Sr (t) := max|R|=r dt (R) denote the sum of the r largest chip positions at time t.
+For r = 0, we use the convention S0 (t) := 0. Note that Sr (t) can include chips at negative positions.
+We will show the following key fact.
+Lemma 3.3 (Spreadness lemma). Suppose that d0 (i) ≤ 0 for every i ∈ [n], and that the largest chip
+position at time T is D > 0. Then, for every integer 1 ≤ r ≤ min{⌊D⌋, n}, there is a time tr ≤ T
+such that
+                                     Sr (tr ) ≥ r(D − r + 1).
+
+In particular, setting r = ⌊D/2⌋, this says that there is some time with Ω(D) chips at positions
+Ω(D). Let us see how Lemma 3.3 directly implies Lemma 3.1.
+
+Proof of Lemma 3.1. Let D := maxt,i dt (i), and let T ⋆ be a time at which some chip is at position
+D. We assume that D > 0 and is sufficiently large, otherwise the lemma trivially holds as p ≥ 1.
+We first show that D ≤ n. Suppose otherwise. Then, applying Lemma 3.3 with r = n, there is a
+time tn ≤ T ⋆ such that
+                                Sn (tn ) ≥ n(D − n + 1) > 0.
+But as Sn (t) is the sum of all chip positions, and every move preserves this sum, we have that
+Sn (tn ) = Sn (0) ≤ 0 (as all chips are initially at nonpositive positions), which is a contradiction.
+We next show D = O(p1/3 ). Let r = ⌊D/2⌋, and note that 1 ≤ r ≤ n as D is sufficiently large and
+at most n. By Lemma 3.3, there is a time tr ≤ T ⋆ for which
+
+                                  Sr (tr ) ≥ r(D − r + 1) ≥ D2 /8 > 0.                                (4)
+
+Let R be the r chips with largest positions at time tr . By Jensen’s inequality for f (x) = x2+ , (4)
+gives                                                      !
+                           X                  1X               1              D3
+                Φ+ (tr ) ≥   f (dtr (i)) ≥ rf       dtr (i) = (Sr (tr )+ )2 ≥    .
+                                               r               r              32
+                           i∈R                      i∈R
+
+Thus by Lemma 3.2 we have D3 /32 ≤ 2p, and hence D ≤ 4p1/3 .
+
+
+3.2   Proof of the Spreadness Lemma
+
+We now prove the spreadness lemma.
+We first need a claim about the evolution of Sr (t). It says that if the top r-chip sum increases by
+the move at time t, we can infer a lower bound on the top (r + 1)-chip sum at time t − 1.
+Lemma 3.4. If 1 ≤ r < n and Sr (t) > Sr (t − 1), then Sr+1 (t − 1) ≥ 2Sr (t) − Sr−1 (t) − 2.
+
+Proof. Let u, v be the moved chips at time t, and let dt−1 (u) = a ≤ b = dt−1 (v). So u moves right
+and v moves left. Let R be some r-set attaining dt (R) = Sr (t) at time t. Since,
+
+                                 dt (R) = Sr (t) > Sr (t − 1) ≥ dt−1 (R),
+
+it must be that u ∈ R and v ∈
+                            / R. As Sr−1 (t) ≥ dt (R \ {u}) = dt (R) − dt (u), we have dt (u) ≥
+Sr (t) − Sr−1 (t), and thus
+                                dt (v) ≥ Sr (t) − Sr−1 (t) − 2,
+
+                                                    8
+as dt (u) − dt (v) = a − b + 2w ≤ 2.
+Consider the (r + 1)-set R ∪ {v}. As it contains both u, v, its total is unchanged by the move. Thus
+
+                Sr+1 (t − 1) ≥ dt−1 (R ∪ {v}) = dt (R ∪ {v}) ≥ 2Sr (t) − Sr−1 (t) − 2.
+
+We can now prove Lemma 3.3.
+
+Proof of Lemma 3.3. Let m := min{⌊D⌋, n}. For 0 ≤ r ≤ m, define the threshold Ar :=
+r(D − r + 1). For r ≥ 1, let tr be the first time at which Sr (tr ) ≥ Ar , provided such a time exists.
+We prove by induction on r ≥ 1 that all these times exist and that T ≥ t1 > t2 > · · · > tm .
+The base case of r = 1 is immediate as S1 (T ) = D = A1 , and thus t1 exists and satisfies t1 ≤ T .
+Suppose that 1 ≤ r < m and that t1 > · · · > tr have been defined. As Ar > 0 for r ≤ D and as
+Sr (0) ≤ 0 (by initial chip positions), we have that tr ≥ 1. Moreover, by minimality of tr , we have
+Sr (tr − 1) < Ar ≤ Sr (tr ). Thus Sr increases at time tr , and by Lemma 3.4 we have
+
+                                Sr+1 (tr − 1) ≥ 2Sr (tr ) − Sr−1 (tr ) − 2.                           (5)
+
+As tr < tr−1 , the minimality of tr−1 again gives Sr−1 (tr ) < Ar−1 (for r = 1, we use S0 (t) = A0 = 0).
+Thus by (5),
+                     Sr+1 (tr − 1) ≥ 2Ar − Ar−1 − 2 = (r + 1)(D − r) = Ar+1 .
+Consequently tr+1 exists and tr+1 ≤ tr − 1 < tr , which completes the induction.
+
+
+4    Stochastic Arrivals from Regular Graphs
+
+We now consider the stochastic setting and prove Theorem 1.2.
+Recall that here we are given a ∆-regular base graph G = ([n], E), and at each time t, the request
+is an edge et = (ut , vt ), sampled independently and uniformly from E. For ease of exposition, we
+assume that each request has weight 1, and we use the words request and edge interchangeably.
+However, the bound in Theorem 1.2 holds for arbitrary weights wt ∈ [0, 1], even when wt is chosen
+adaptively based on the previously sampled edges e1 , . . . , et−1 , as we will reduce the analysis of the
+stochastic setting to a suitable deterministic instance and apply Theorem 1.1.
+
+Sampled Graph. As discussed in Section 1.2, we can assume that T = cn, and we set c = 1/16.
+The key object in the proof of Theorem 1.2 is the sampled multigraph Gsamp , which has vertex set [n],
+and edge-multiset e1 , . . . , ecn consisting of edges sampled independently from G (with multiplicity).
+The proof has two ingredients: First, we show that Gsamp has connected components of size O(log n),
+and that each component is close to a tree. As Greedy works on each component of Gsamp (formed
+in hindsight) separately, we can apply the adversarial bound in Theorem 1.1 to the request sequence
+within each component. This already gives the O(log1/3 n) bound in Theorem 1.2. Second, to prove
+the stronger bound (1) we prove a more refined adversarial bound for Greedy when the multigraph
+formed by the requests is tree-like.
+We now state these two ingredients formally, and show they imply Theorem 1.2.
+
+
+
+
+                                                    9
+Lemma 4.1. With probability 1 − n−Ω(1) , every connected component C of Gsamp satisfies:
+  1. Few vertices and edges: C has |V (C)| = O(log n) vertices and |E(C)| = O(log n) edges.
+  2. “Tree-like” components: For ∆ = Ω(log3 n), we further have |E(C)| ≤ |V (C)|+O(log n/ log ∆).
+
+In particular, part 2 of Lemma 4.1 says that each component has only O(log n/ log ∆) edges beyond
+a spanning tree. The following lemma gives a refined bound for precisely such request sequences.
+
+Lemma 4.2 (Greedy on “tree-like” requests). Let H be a connected multigraph on m vertices with
+T edges, and let p := T − (m − 1) denote the number of surplus edges in H beyond a spanning
+tree. Let ρ1 , . . . , ρT be any ordering of the edges of H, viewed as carpooling requests. Then, for each
+1 ≤ t ≤ T , the maximum discrepancy of Greedy after processing ρ1 , . . . , ρt is
+
+                                                O p1/3 + log m .
+                                                               
+
+
+Proof of Theorem 1.2. Condition on the event in Lemma 4.1, and fix a component C of Gsamp .
+Now Greedy works separately in each component, and the request sequence in C is some arbitrary
+ordering of the sampled edges in C. As |E(C)| = O(log n) by Lemma 4.1, Theorem 1.1 directly
+gives the O(log1/3 n) bound in Theorem 1.2.
+We now show the second bound in Theorem 1.2 assuming ∆ = Ω(log3 n). Fix some component C
+of Gsamp and set m := |V (C)| and p := |E(C)| − |V (C)| + 1. Conditioning on the event in Lemma
+4.1, we have m = O(log n) and p = O(log n/ log ∆). Hence, applying Lemma 4.2 to the request
+sequence in C gives the claimed discrepancy O(p1/3 + log m) = O((log n/ log ∆)1/3 + log log n).
+Since the event in Lemma 4.1 holds with probability 1 − n−Ω(1) and C is arbitrary, with high
+probability, the claimed discrepancy bound holds for every i ∈ [n].
+
+The proof of Lemma 4.1 is similar to the witness-tree argument in [KP06]. But the formulation
+we need here is slightly different, we defer the details to Section 4.3 for completeness. We prove
+Lemma 4.2 next.
+
+
+4.1   Greedy on Tree-Like Request Sequences
+
+Proof of Lemma 4.2. For 0 ≤ t ≤ T , let Ht be the multigraph formed by the first t requests, and let
+ct (u) denote the size of the component containing u in Ht . We call a request ρt = (u, v) merging if
+u and v lie in different components of Ht−1 , and internal otherwise. Since H is connected, exactly
+m − 1 requests are merging, and hence exactly p are internal.
+The idea is to absorb the effect of merging requests into the growth of the component sizes, so that
+only the p internal requests can contribute expanding moves. Define
+
+                   xt (u) := dt (u) − 2 log2 ct (u),        yt (u) := −dt (u) − 2 log2 ct (u).
+
+We show that xt (u) ≤ 4p1/3 for every u and t. The same argument applied to yt gives the analogous
+bound. Since ct (u) ≤ m, it then follows that
+
+                                        |dt (u)| ≤ 4p1/3 + 2 log2 m.
+
+To bound xt (u), consider an auxiliary chip game with one chip for each vertex u and one dummy
+chip z, initially placed sufficiently far to the left of the origin. All the vertex chips start at the
+
+                                                       10
+origin. The idea is to realize the evolution of xt so that every internal request in Ht is simulated
+by a single chip move in the auxiliary game, while every merging request is simulated using only
+contracting moves. The auxiliary game then has at most p expanding moves, and Lemma 3.1 gives
+the desired bound.
+Suppose first that ρt = (u, v) is internal, and label its endpoints so that dt−1 (u) ≤ dt−1 (v). Since u
+and v are in the same component, ct−1 (u) = ct−1 (v), and hence xt−1 (u) ≤ xt−1 (v). Moreover, the
+component sizes do not change, so
+                            xt (u) = xt−1 (u) + 1,        xt (v) = xt−1 (v) − 1.
+Thus the update is exactly one chip move of weight 1.
+Now suppose that the request ρt = (u, v) merges components A and B containing u and v respec-
+tively. Let a = |A| and b = |B|, and suppose dt−1 (u) ≤ dt−1 (v). As dt−1 (u) ≤ dt−1 (v), we have
+dt (u) = dt−1 (u) + 1 and dt (v) = dt−1 (v) − 1, and thus
+                       xt (u) = xt−1 (u) + 1 − α,         xt (v) = xt−1 (v) − 1 − β,
+where α := 2 log2 ((a + b)/a) and β := 2 log2 ((a + b)/b). Note that both α, β > 0.
+Moreover, every chip in A \ {u} decreases by α, and every chip in B \ {v} decreases by β.
+The dummy chip z serves simply as a sink for these decreases. By placing it sufficiently far to
+the left, we can decrease any vertex chip by an arbitrary amount using contracting moves with z,
+splitting the decrease into moves of weight at most 1. Thus all updates for vertices other than u
+and v are immediate.
+It remains to handle u and v. If α ≥ 1, both chips move left (note that v always moves to the left
+as β > 0), and we again use z. Suppose therefore that α < 1, and let w := 1 − α ∈ (0, 1). So chip
+u moves right by w.
+A key observation is that this move is contracting. To this end we will show that xt−1 (v)−xt−1 (u) ≥
+w. Indeed,
+           xt−1 (v) − xt−1 (u) = dt−1 (v) − dt−1 (u) + 2 log2 (a/b) ≥ 2 log2 (a/b) = β − α.
+                                       √
+Now α < 1 implies that (a + b)/a ≤ 2 and hence that a > b. But this implies that β > 2, and
+thus β − α ≥ 2 − α > 1 − α = w.
+We first make a weight-w move on the chips u, v, which is contracting. This moves u to its required
+position xt (u) and decreases v by w. The remaining decrease required at v is 1 + β − w = α + β > 0,
+which can again be carried out using z.
+Thus every merging request can be simulated entirely by contracting moves, whereas each internal
+request contributes at most one expanding move. Since there are exactly p internal requests, Lemma
+3.1 gives xt (u) ≤ 4p1/3 for every u and t. Applying the same argument to yt completes the proof.
+
+
+4.2   Lower Bound for Stochastic Arrivals
+
+We now prove Theorem 1.3 and show a lower bound for the cube-root bound in (1).
+Theorem 4.3. Suppose that ∆ = Ω(log n). There exists a ∆-regular graph G on n vertices such
+that for n i.i.d. edge requests from G, every online algorithm has, with probability 1 − o(1),
+                                   max ∥dt ∥∞ = Ω (log n/ log ∆)1/3 .
+                                                                   
+                                  t≤n
+
+
+                                                     11
+The proof is an adaptation of the Ω(log1/3 T ) randomized lower bound of [AAN+ 98] in Section 1.2.
+
+Proof of Theorem 4.3. Let G be the ∆-regular graph consisting of M := n/(∆       + 1) disjoint cliques
+C1 , . . . , CM , each of size ∆+1. We will show an Ω(h) lower bound, where h := (log n/(8 log ∆))1/3 .
+                                                                                                     
+
+We can assume that ∆ < n1/64 , otherwise the lower bound holds trivially. Thus h ≥ 2, and
+the number of cliques is M = Ω(n63/64 ). We will show that each clique Ci contains a vertex of
+discrepancy Ω(h) with probability Ω(n−1/4 ), and that these events are independent for different
+cliques. As there are Ω(n63/64 ) cliques, this will give the result.
+It is convenient to work with a Poissonized edge arrival process rather than assume that the number
+of arrivals is exactly n. Assign to each edge e ∈ E(G) an independent Poisson clock of rate 1/∆,
+and run the process for one unit of time. Since |E(G)| = n∆/2, the total number N of edges that
+arrive satisfies N ∼ Poi(n/2). Thus, this yields a sequence of N edges, where each is sampled
+independently and uniformly from E(G). Finally, Pr[N > n] = e−Ω(n) , so N ≤ n with high
+probability. Therefore, a lower bound in the Poissonized model translates to a lower bound in the
+model with exactly n arrivals.
+                                                                                 1 ∆+1
+                                                                                       
+Fix a clique Ci and note that the number of arrivals in Ci is Poisson with mean ∆   2    = (∆+1)/2.
+For L = h3 which is o(∆), by standard concentration bounds, the probability that Ci receives at
+least L arrivals is at least 1/2.
+Now, fix an arbitrary set Si ⊆ Ci of h vertices and consider the first L arrivals in Ci . If at any point
+some vertex of Si has absolute discrepancy at least h/4, we are done. Otherwise, some two vertices
+have the same discrepancy. For each k ≤ L, before the k-th edge in Ci is revealed, prescribe an
+edge ei,k ⊆ Si joining two equal-discrepancy vertices, choosing lexicographically; if the lower bound
+has already occurred, choose arbitrarily. Let Bi be the event that Ci receives at least L arrivals and
+each of its first L arrivals equals its prescribed edge.
+If the event Bi occurs, then either a discrepancy
+                                              P of Ω(h)2 has already occurred, or every one of the
+first L arrivals increases the potential Φi := v∈Si d(v) by 2. In the latter case, after L arrivals
+Φi = 2L = 2h3 , and some vertex has discrepancy Ω(h).
+                                                                                        3
+As each arrival in Ci is uniform among its (at most ∆2 ) edges, Pr[Bi ] ≥ (1/2)∆−2h ≥ (1/2)n−1/4 .
+We now show that the events Bi are independent. Condition on all Poisson counts and arrival times.
+Reveal the edge identities in chronological order. Each ei,k is determined before the k-th edge in
+Ci is revealed, while that edge is independent and uniform in E(Ci ). Hence, by induction over the
+reveal order, the events that the k-th edge in Ci equals ei,k are mutually independent over all i, k.
+Since the Poisson counts are also independent across cliques, so are the events Bi .
+As there are M = Ω(n63/64 ) cliques and the corresponding events B1 , . . . , BM are independent,
+some Bi occurs with probability at least 1 − (1 − n−1/4 /2)M = 1 − o(1).
+
+
+4.3   Missing Proof of Lemma 4.1
+
+The proof uses a “witness-tree” argument, which proceeds as follows. To bound the number of
+edges in a connected component, we enumerate the multisets of r edges of G that form a connected
+subgraph. For each such multiset, we bound the probability that it occurs in Gsamp . A union bound
+then shows that, with high probability, every connected multiset of edges occurring in Gsamp has
+size O(log n). When ∆ is large, a different bound on the number of connected multisets shows that
+every component is nearly a tree.
+
+                                                   12
+Proof of Lemma 4.1. Set c := 16, T := n/c, and M := |E(G)| = n∆/2. The T edges of Gsamp are
+sampled independently and uniformly with replacement from E(G).
+
+
+Components have O(log n) vertices and edges. We first show that, with high probability,
+every component of Gsamp has O(log n) edges. The vertex bound then follows.
+For a fixed r ≥ 1, let C be an arbitrary multigraph formed by a multiset of r edges of G whose
+underlying simple graph is connected. To count all such C, we construct an injective map C 7→
+Witness(C) to vertex-labeled “witness trees” with r edges. It therefore suffices to count the possible
+witness trees.
+To construct Witness(C), we choose a spanning tree Ctree of C. For each remaining edge {u, v} ∈
+C \ Ctree , attach a new leaf labeled v to the vertex u of Ctree . The result is a vertex-labeled witness
+tree Witness(C) with exactly r edges.3 Note that its vertex labels need not be unique. Since the
+multiset of labeled edges in Witness(C) is exactly C, the map is injective. The construction is
+illustrated in Figure 2.
+
+                                          c
+                                                                a       b        c
+
+                                    a           b
+                                                                b             a
+
+                                          C                         Witness(C)
+
+Figure 2: The selected spanning tree Ctree is a–b–c. The two remaining edges {a, b} and {a, c} are
+attached as dashed leaf edges to form Witness(C). The labels a and b therefore repeat.
+
+We now upper bound the number of witnesses. Each witness is a tree with r edges, and each labeled
+edge belongs to E(G). There are at most 4r rooted ordered tree shapes [Knu97]. We fix such a
+shape and enumerate the number of labelings that lead to a witness. The label of the root is chosen
+first. There are n possible ways to do this. Next, the remaining vertices are labeled in breadth-first
+order. Once the label of a parent has been fixed, the label of each child can be chosen in at most ∆
+ways, since it must be a neighbor of its parent in G. Thus,
+                                      Number of witness trees ≤ 4r n∆r .                                         (6)
+
+We next bound the probability that a fixed r-edge multiset S occurs in Gsamp . Fix an ordering
+of the r edge occurrences in S. There are at most T r choices of distinct sampling times at which
+these edges can be sampled. For any fixed choice, the probability that the corresponding edges are
+sampled is M −r . Therefore,
+                                                          r 
+                                                                       1 r
+                                                                         
+                                               r   −r      2
+                     Pr[S occurs in Gsamp ] ≤ T M =              =          .                  (7)
+                                                          c∆          8∆
+Combining (6) and (7), for each r, the probability that Gsamp contains a connected r-edge multiset is
+at most 4r n∆r (1/(8∆))r = n/2r . Set L := ⌈10 log2 n⌉. A union boundP  over r = L, . . . , T shows that
+the probability that some component has at least L edges is at most Tr=L n/2r ≤ 2n/2L ≤ 2n−9 .
+Thus, with probability at least 1 − 2n−9 , every component has O(log n) edges.
+   3
+    To make the map well defined, fix once and for all a deterministic rule for selecting Ctree from the underlying
+simple graph of C, and another for deciding which endpoint of each remaining edge labels the new leaf. The particular
+rules do not affect the argument.
+
+
+                                                         13
+Components are “tree-like” for large ∆. Assume ∆ = Ω((log n)3 ), and set p := ⌈20 log n/ log ∆⌉.
+By the first part, except with probability at most 2n−9 , every component has at most L vertices.
+Fix m ≤ L, and let Bm be the event that Gsamp contains a component with m vertices and at least
+m − 1 + p edge occurrences. We will now bound the probability of Bm .
+Consider a connected edge multiset C with m − 1 + p edges whose underlying graph has m vertices.
+We again use the injective map C 7→ Witness(C). It therefore suffices to count the possible
+witnesses.
+Each witness consists of the tree Ctree , which has m − 1 edges and distinct vertex labels, together
+with p new leaves attached to its vertices. Each new leaf has one of the m labels already appearing
+in Ctree . Using the same argument as above, there are at most 4m n∆m−1 choices for Ctree . Once
+this tree is fixed, there are at most mp choices for the attachment points of the leaves and at most
+mp choices for their labels. Thus,
+                             Number of witness trees ≤ 4m n∆m−1 m2p .                             (8)
+If Bm occurs, then at least one such edge multiset C occurs in Gsamp . Combining (7) and (8), a
+union bound gives
+                                                                       p
+                                                 1 m−1+p      8n m2
+                                                               
+                      Pr[Bm ] ≤ 4m n∆m−1 m2p               = m            .                 (9)
+                                                8∆            2    8∆
+Since m ≤ L = O(log n) and ∆ = Ω((log n)3 ), we have m2 /(8∆) ≤ ∆−1/4 for all sufficiently large
+n. Since p ≥ 20 log n/ log ∆, we have Pr[Bm ] ≤ 8n∆−p/4 ≤ 8n−4 . A union bound over m ≤ L gives
+a total failure probability of O(log n/n4 ).
+The first part fails with probability at most 2n−9 , and the second with probability O(log n/n4 ).
+Thus, for all sufficiently large n, with probability at least 1 − 1/n, every component has O(log n)
+vertices and edges. Moreover, when ∆ = Ω((log n)3 ), every component has at most O(log n/ log ∆)
+edges beyond a spanning tree. This proves the lemma.
+
+AI Disclosure: An initial proof Theorem 1.1, which applied only to unit weight requests, was
+obtained by the authors. Upon prompting ChatGPT 5.5 with this proof, it produced a simplified
+proof of the same bound that also generalized to requests with weights in [0, 1]. This is the version
+of the proof presented in Section 3 of the paper. The other proofs in the paper are by authors. AI
+tools were also used to assist with typesetting and proofreading. The authors take responsibility
+for the contents of the paper.
+
+
+References
+[AA26]     Ishaq Aden-Ali. Optimal online discrepancy minimization in linear time, 2026.
+[AAN+ 98] Miklós Ajtai, James Aspnes, Moni Naor, Yuval Rabani, Leonard J. Schulman, and Orli
+          Waarts. Fairness in scheduling. Journal of Algorithms, 29(2):306–357, 1998.
+[ABKU94] Yossi Azar, Andrei Broder, Anna Karlin, and Eli Upfal. Balanced allocations. In
+         Symposium on Theory of Computing, STOC, pages 593–602, 1994.
+[ALS+ 89] Richard Anderson, László Lovász, Peter Shor, Joel Spencer, Éva Tardos, and Shmuel
+          Winograd. Disks, balls, and walls: Analysis of a combinatorial game. American Mathe-
+          matical Monthly, 96:481–493, 1989.
+
+                                                 14
+[AT25]    Dylan J Altschuler and Konstantin Tikhomirov. A threshold for online balancing of
+          sparse iid vectors. arXiv preprint arXiv:2509.02432, 2025.
+
+[Bár79]   Imre Bárány. On a class of balancing games. Journal of Combinatorial Theory, Series
+          A, 26(2):115–126, 1979.
+
+[BCSV00] Petra Berenbrink, Artur Czumaj, Angelika Steger, and Berthold Vöcking. Balanced
+         allocations: The heavily loaded case. In Symposium on Theory of Computing, STOC,
+         pages 745–754, 2000.
+
+[BLS91]   Anders Björner, László Lovász, and Peter W. Shor. Chip-firing games on graphs. Euro-
+          pean Journal of Combinatorics, 12(4):283–291, 1991.
+
+[BRS22]   Nikhil Bansal, Lars Rohwedder, and Ola Svensson. Flow time scheduling and prefix
+          Beck-Fiala. In Symposium on Theory of Computing, STOC, pages 331–342, 2022.
+
+[BS20]    Nikhil Bansal and Joel H. Spencer. On-line balancing of random inputs. Random
+          Structures & Algorithms, 57(4):879–891, 2020.
+
+[CNP+ 11] Don Coppersmith, Tomasz Nowicki, Giuseppe Paleologo, Charles Tresser, and Chai Wah
+          Wu. The optimality of the online greedy algorithm in carpool and chairman assignment
+          problems. ACM Transactions on Algorithms, 7(3):37:1–37:22, 2011.
+
+[FKK+ 16] Amos Fiat, Anna R. Karlin, Elias Koutsoupias, Claire Mathieu, and Rotem Zach. Car-
+          pooling in social networks. In International Colloquium on Automata, Languages, and
+          Programming (ICALP), 2016.
+
+[FW83]    Ronald Fagin and John H. Williams. A fair carpool scheduling algorithm. IBM Journal
+          of Research and Development, 27(2):133–139, 1983.
+
+[GKKS20] Anupam Gupta, Ravishankar Krishnaswamy, Amit Kumar, and Sahil Singla. Online
+         carpooling using expander decompositions. In Foundations of Software Technology and
+         Theoretical Computer Science (FSTTCS), 2020.
+
+[Knu97]   Donald E. Knuth. The Art of Computer Programming, Volume 1: Fundamental Algo-
+          rithms. Addison-Wesley, Reading, Massachusetts, third edition, 1997.
+
+[KP06]    Krishnaram Kenthapadi and Rina Panigrahy. Balanced allocation on graphs. In Sym-
+          posium on Discrete Algorithms, SODA, pages 434–443, 2006.
+
+[KRR24]   Janardhan Kulkarni, Victor Reis, and Thomas Rothvoss. Optimal online discrepancy
+          minimization. In Symposium on Theory of Computing (STOC), pages 1832–1840, 2024.
+
+[LR26]    Siyue Liu and Victor Reis. Weighted Chairman Assignment and Flow-Time Scheduling.
+          In Innovations in Theoretical Computer Science Conference (ITCS), 2026.
+
+[PTW15] Yuval Peres, Kunal Talwar, and Udi Wieder. Graphical balanced allocations and the
+        (1+ β)-choice process. Random Structures & Algorithms, 47(4):760–775, 2015.
+
+
+
+
+                                             15
+

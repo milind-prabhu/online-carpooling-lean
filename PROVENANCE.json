@@ -1,0 +1,152 @@
+{
+  "paper": "The Cube-Root Phenomenon in Online Carpooling",
+  "arxiv_version": "2609.21348v1",
+  "paper_url": "https://arxiv.org/abs/2609.21348v1",
+  "paper_pdf_sha256": "afb08d374e8b6fd686fc779ed696559d2af09cfadc419b58e07973450647058a",
+  "verified_date": "2026-11-17",
+  "lean": "leanprover/lean4:v4.24.0",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "status": "all main theorems proved in explicit finite forms: deterministic upper bound, both stochastic upper bounds, adversarial cubic lower bound, and all-parameter stochastic lower bound with real-log rate and vanishing-error modulus",
+  "lean_sources_sha256": {
+    "Carpooling/AdaptiveProbability.lean": "29e0c6683561cacd16b1a9a7533891fee7290a4f0ae2738166895ae4ed0c494d",
+    "Carpooling/Amplification.lean": "48fe20101223b7ff548e663d5582db94d41d87fde3f0ad99f899b4c5ea2a97da",
+    "Carpooling/Basic.lean": "926479752e7bad62a43d8f77503797dd92ff9f2570e999e036e13c2b5942da6d",
+    "Carpooling/Batched.lean": "7092c174c32e25556ca97706de0785ea3eaa2646929475d1aa0a850f8f01ba04",
+    "Carpooling/ChargedLower.lean": "19b8282fcad7e2be8f3aabf6817ac63a88abf5a75a93cb95e3110eded208b06c",
+    "Carpooling/Clusters.lean": "79134cc408fc8d93e6067c33b4c29941718c86637d2e12ba520b51244f8728ec",
+    "Carpooling/Components.lean": "0a52a090932397fd69c2cf984b99aaece15640b8e45f86fd95050e3e1fbe60a5",
+    "Carpooling/CountBounds.lean": "ab732a41c02d886e29dc02f9e7c3480b7dfd31c8ed52df059eb6574ac426f194",
+    "Carpooling/Deterministic.lean": "c6e5c62d0a9abdd51d9d35cd359fe1cf45337f5f6782eb264473ddf218add06f",
+    "Carpooling/DisjointCliques.lean": "70f67784c702e5b96c8d1e46be2ab1d50e0c19101dc022381c720a4e4d9bbd81",
+    "Carpooling/Dissipative.lean": "7fb84e1d7e8ba6044b9d0b25ca2e5725c490aa7d1f8467762a0d2fa42fcd585f",
+    "Carpooling/EmbeddedLower.lean": "944eb3d71de0aa794096661a96885c937aba0664ff5dbfdf72be2686463efa45",
+    "Carpooling/FinalLower.lean": "2e72d8b936645881b1bca35b1920cb9c021ec967765aa08ed3730c7188132672",
+    "Carpooling/FiniteMixtures.lean": "3f7398fabe461832039ceb2fdc8b10cbb90d5b3762f9f312aa3071bb5d4da63e",
+    "Carpooling/FiniteProbability.lean": "e0c28b43a12976498729c20bfe0dc905d7df0fddf91efb8f9d1e35e0215ef5d3",
+    "Carpooling/FiniteSampling.lean": "ee92b0b8837bf7bea19face77940266a37cd729af064c95391c6b51d14a3de51",
+    "Carpooling/GraphSums.lean": "07cdbc243feb169236b4bce75c07af34e82aac61335eaba2426e99d043b66b96",
+    "Carpooling/LocalStochasticLower.lean": "ee4cb1b2ef18ca3dc5c93b31c9a1cc4be5ad1ab1a3a89aceeaeeb246e9988554",
+    "Carpooling/LocalTreeLike.lean": "eba4a243ba2872b23678f318bc809bc08011114a70aa366f47e17b075cb26d03",
+    "Carpooling/LowerBound.lean": "8fd548abb206db0fcd47533b93f9ab48e6585e51bf8650417dce3e4b9f21a310",
+    "Carpooling/LowerCorollaries.lean": "8865ce04369ca58dd75b13fbff9ff9f217b88a575ea50fec677d3aab18ad02fd",
+    "Carpooling/LowerThresholds.lean": "26730e40db6b348236f99df7a256f73ba9beb86d353a5ce6078a0ad1dd3ce353",
+    "Carpooling/MixedSampling.lean": "1751a1d68bb75a81e3fad21dd62e529f428ffa07dace34acfe33d59e0436fcc7",
+    "Carpooling/Occupancy.lean": "1b9728edc6d788dcd69a3ee93acf6d84931604c4f62fefb958bbcdb53153eae9",
+    "Carpooling/OnlineLower.lean": "d45838786fdb90aee3a9f034ebb65f30acfe4e256af487f9f8b9226b5c05aa17",
+    "Carpooling/PaddedLower.lean": "5526be4810a6f17fc7a92db5ff850007771025324b0997ea8d226f1f7a0eaaa6",
+    "Carpooling/PaddedThresholds.lean": "1f68e6351e1620a8a5e40ed9bbf74976629737341bfac09606d35bd3775e8550",
+    "Carpooling/PaddingParameters.lean": "6af1af4f95a1e78519e72abffe760f117eeecdf1d033fbd99642f0b52fc06e75",
+    "Carpooling/Potential.lean": "c4e68276c0272066dd6590492aa43a698b243590ecadd95eb0d43a95c34a82a1",
+    "Carpooling/PrefixCuts.lean": "323ef0badc42cce169fea920735b7d7dc153587f9220e2ad331fc8fa114a55d8",
+    "Carpooling/Pushforward.lean": "0212223538575946bf00ac957e51d0144f5531d021ce4936c47f53776768797d",
+    "Carpooling/RefinedBatched.lean": "cfe801aecf52ed8dd68289a90511e11dcda136db5ac1e5b38f8b93d10375a4a3",
+    "Carpooling/RefinedThresholds.lean": "f7ac5f167f95fc5226ccfa4baf3220df5332d851bcb9a4023713825aea58f204",
+    "Carpooling/RefinedWitnesses.lean": "85c4b36c432b7f722638e172b75a6ee743de745c016caa91e7cbd9d74a82af28",
+    "Carpooling/RegularExistence.lean": "81c6e6ea59fa7ed453bc78484db342601005c3a07b61a75cc5c03b61c2a620e9",
+    "Carpooling/RegularGraphLower.lean": "de75b4752f43a0215cf1bda0c58d3d3a19526d1735b1017cef49297f4ce59865",
+    "Carpooling/RegularGraphs.lean": "fa5adccc36077b05da245573a62cb8f2ac6e2c688c621bcba03f127cc74b1763",
+    "Carpooling/Requests.lean": "f0f5307e151c2db39abaf328191931286ac3db285a0fed6a5d9915b86bef4fe6",
+    "Carpooling/ScheduledLower.lean": "dd8fdd92a0146cc2d7052a08431fcfd27620a74fdb64d464a0266e4b09007e6f",
+    "Carpooling/Spreadness.lean": "7b439dd1b819f7574ee4ced6721106307f16b41c43de3aed28c256475cd4b429",
+    "Carpooling/StochasticBasic.lean": "00e0adf1e5ec421bed752bc550d90c70ddcd2090b4381d485eeeb573e145f246",
+    "Carpooling/StochasticLower.lean": "b40bafdb43175ecd4293b740d22d4394b440c9a91c65694bd18fd2c0dadcb3ac",
+    "Carpooling/StochasticRefined.lean": "1d8529b29cc40caf7751644da203d4d7146e3ad908bbdd247969528eb3ee7d63",
+    "Carpooling/StochasticTheorem.lean": "99612587a479583407231b806ae29757581be895add6ce17e127bff453e8aa4a",
+    "Carpooling/TopSums.lean": "b7c4fc7756c849cfcdb7227dbbdedb63a10127c8f06340bd771aa9828d9d7698",
+    "Carpooling/TreeLike.lean": "e5b731ff5cb64bf55c2cf25a0b85f68139e86d3d683d62897532f7b8503c17db",
+    "Carpooling/UniformMaps.lean": "d094e7f1c7d451465da5fb2ba90cbf1fa89471e9a9c00301f12876b0cae4cf5c",
+    "Carpooling/UpperBounds.lean": "14b4cc31d0631476a104a86e6e853b1768cec00d331d47fd303198dd05e61854",
+    "Carpooling/VaryingSchedule.lean": "93bffaa2ad185335b6d49d11d98c78849754075e4990ceefe60c79b26ba9f3ca",
+    "Carpooling/WeightedLower.lean": "8abbba3e5b7d57b0f89b3b5a1da4ec621770cae23821027854cd68695a35718c",
+    "Carpooling/WeightedOccupancy.lean": "d195a6b03780b54a341ff213d5f3f55d7b1f4303165fb93cb97de3c5f2234e71",
+    "Carpooling/WitnessCounting.lean": "a164c5d1aadae669f05460876f2953e65f5c8ad3bff6efd11eb11c1d99c7423a",
+    "Carpooling/WitnessCover.lean": "c7df02c67990a80be38a29389e068a42d997779de2177dc114ad854da3722c1b",
+    "Carpooling/WitnessForest.lean": "93a4f485b672d875ec6532bcb3b13fd796ef723a4a2a29634cccbd6e0ce8c20c",
+    "Carpooling.lean": "776b0e7b270e192826c4c95482c65ac862f6238a80d89cf0b811d7b787394484",
+    "Audit.lean": "edbca668308478a36f48864bfc17da09d98f6dff84c189818f74570c0c5d4aba"
+  },
+  "audited_declarations": 84,
+  "stochastic_formulation": {
+    "basic_batch_failure": "1/n",
+    "refined_batch_failure": "3/n",
+    "basic_K_batch_failure": "K/n",
+    "refined_K_batch_failure": "3K/n",
+    "L": "Nat.clog 2 (2*n^2)",
+    "p": "24 * Nat.clog 2 n / Nat.log 2 Delta + 1",
+    "refined_degree_cutoff": "Delta >= max(256,L^3)",
+    "batch_size_condition": "16*B <= n",
+    "probability_model": "exact uniform finite sequence space, with replacement"
+  },
+  "end_to_end_theorems": [
+    "theorem_1_2_basic",
+    "theorem_1_2_refined",
+    "theorem_1_2_basic_greedy",
+    "theorem_1_2_refined_greedy"
+  ],
+  "algorithm": "Greedy with local state restarted each batch; cumulative signed discrepancy over chronological cutoffs",
+  "lower_bounds": {
+    "adversarial_vertices": "2*h+2",
+    "adversarial_horizon": "(2*h+2)*h^2 <= 4*h^3 for h>0",
+    "adversarial_target": "h",
+    "causal_adversary": "lowerStates_prefix_congr",
+    "adaptive_selected_likelihood": "1 / (#E)^I.card",
+    "clique_local_likelihood": "1 / (choose(2*h+2,2))^T when (2*h+2)*h^2 < 2*T",
+    "unfinished": [],
+    "completed_additions": [
+      "embedded_local_lower_probability",
+      "pairwise_event_amplification",
+      "adaptive_prescription_amplification",
+      "charged_potential_lower_bound",
+      "exists_prefix_cut",
+      "scheduled_targets_lower_probability_of_counts"
+    ],
+    "conditional_schedule_failure": "q^L/K for any fixed schedule with at least L arrivals in each of K targeted cliques and (2*h+2)*h^2 < 2*L",
+    "unconditional_theorem": "theorem_1_3",
+    "logarithmic_theorem": "regular_cliques_lower_logarithmic",
+    "graph": "exactly n vertices, degree Delta; full cliques plus a regular circulant remainder of size (Delta+1) + n%(Delta+1)",
+    "unconditional_failure": "10/(Delta+1), for exactly n iid uniform graph-edge requests",
+    "logarithmic_failure": "10/N for h>0, 6*h^3<=N, 12*h^3<=Nat.log N M",
+    "count_proof": "fixed-horizon occupancy variance and first-moment bound; Poissonization not required",
+    "rate": "(Real.log n / Real.log Delta)^(1/3) <= (64*a)^(1/3)*h",
+    "finite_assumptions": [
+      "2 <= Delta < n",
+      "(n*Delta)%2 = 0",
+      "48 <= a",
+      "6*Nat.log 2 n <= a*(Delta+1)"
+    ],
+    "vanishing_error_modulus": "theorem_1_3_with_error: failure <= 1/k for k>0 and n >= 2^(2*a*k), under the same hypotheses",
+    "randomization": "randomized_lower_bound: arbitrary finite normalized nonnegative mixtures over independent seeds, uniform bound for every fixed causal rule",
+    "proof_method": "fixed-horizon weighted occupancy, adaptive second-moment amplification, explicit circulant padding, constant-fiber uniform sampling transfer"
+  },
+  "scope_note": "Pinned paper version; quantitative finite statements and explicit error modulus replace asymptotic notation. The lower probability proof replaces Poissonization.",
+  "blueprint": {
+    "extractor": "blueprint/Extract.lean",
+    "compiled_project_constants": 1109,
+    "source_named_declarations": 420,
+    "views": {
+      "overview": {
+        "nodes": 33,
+        "arrows": 35
+      },
+      "deterministic": {
+        "nodes": 52,
+        "arrows": 80
+      },
+      "stochastic": {
+        "nodes": 151,
+        "arrows": 250
+      },
+      "lower": {
+        "nodes": 122,
+        "arrows": 178
+      },
+      "full": {
+        "nodes": 420,
+        "arrows": 745
+      }
+    },
+    "dependencies": "compiled Lean constant types and values; collapsed omitted helpers; transitive reduction",
+    "validation": "all 1288 displayed arrows have verified dependency paths; 420 nonempty compiled statements; JavaScript syntax passed",
+    "inspiration": "https://teorth.github.io/pfr/blueprint/dep_graph_document.html"
+  }
+}

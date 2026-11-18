@@ -1,0 +1,857 @@
+⚠ [970/1233] Replayed Carpooling.Deterministic
+warning: Carpooling/Deterministic.lean:10:0: automatically included section variable(s) unused in theorem `Carpooling.topSum_sq_le`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1903/1955] Replayed Carpooling.Dissipative
+warning: Carpooling/Dissipative.lean:8:0: automatically included section variable(s) unused in theorem `Carpooling.topSum_mono`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Dissipative.lean:13:0: automatically included section variable(s) unused in theorem `Carpooling.potential_mono`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Dissipative.lean:68:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1908/1955] Replayed Carpooling.WitnessForest
+warning: Carpooling/WitnessForest.lean:27:8: automatically included section variable(s) unused in theorem `Carpooling.Witness.edges_card`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessForest.lean:36:8: automatically included section variable(s) unused in theorem `Carpooling.Witness.edges_append`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessForest.lean:48:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.valid_append`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1910/1955] Replayed Carpooling.WitnessCounting
+warning: Carpooling/WitnessCounting.lean:12:8: automatically included section variable(s) unused in theorem `Carpooling.Witness.shape_nodes`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessCounting.lean:23:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.decorate_card_le`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessCounting.lean:44:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.mem_decorate`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1912/1955] Replayed Carpooling.WitnessCover
+warning: Carpooling/WitnessCover.lean:42:0: automatically included section variable(s) unused in theorem `Carpooling.inBlock_pair`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessCover.lean:52:0: automatically included section variable(s) unused in theorem `Carpooling.selected_union`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/WitnessCover.lean:61:24: This simp argument is unused:
+  Multiset.cons_add
+
+Hint: Omit it from the simp argument list.
+  simp [ha, hb, ih, M̵u̵l̵t̵i̵s̵e̵t̵.̵c̵o̵n̵s̵_̵a̵d̵d̵,̵ ̵Multiset.add_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [1914/1955] Replayed Carpooling.FiniteProbability
+warning: Carpooling/FiniteProbability.lean:33:0: automatically included section variable(s) unused in theorem `Carpooling.fixedEvent_card`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/FiniteProbability.lean:175:0: automatically included section variable(s) unused in theorem `Carpooling.evaluationEvent_card`:
+  [Nonempty Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1916/1955] Replayed Carpooling.StochasticBasic
+warning: Carpooling/StochasticBasic.lean:16:0: automatically included section variable(s) unused in theorem `Carpooling.bagEnumeration_bag`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/StochasticBasic.lean:23:8: automatically included section variable(s) unused in theorem `Carpooling.sampleBag_card`:
+  [DecidableEq A]
+  [Fintype E]
+  [DecidableEq E]
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype E] [DecidableEq E] [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/StochasticBasic.lean:34:0: automatically included section variable(s) unused in theorem `Carpooling.mem_bagOccurrence`:
+  [DecidableEq E]
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/StochasticBasic.lean:43:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.decorate_nodes`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/StochasticBasic.lean:147:33: This simp argument is unused:
+  div_pow
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵d̵i̵v̵_̵p̵o̵w̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/StochasticBasic.lean:147:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/StochasticBasic.lean:147:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/StochasticBasic.lean:150:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/StochasticBasic.lean:159:0: automatically included section variable(s) unused in theorem `Carpooling.bad_discrepancy_subset`:
+  [DecidableEq E]
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1917/1955] Replayed Carpooling.Batched
+warning: Carpooling/Batched.lean:34:0: automatically included section variable(s) unused in theorem `Carpooling.aggregate_bound_outside_bad_event`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1918/1955] Replayed Carpooling.LocalTreeLike
+warning: Carpooling/LocalTreeLike.lean:10:85: unused variable `hv`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [1919/1955] Replayed Carpooling.RefinedWitnesses
+warning: Carpooling/RefinedWitnesses.lean:16:8: automatically included section variable(s) unused in theorem `Carpooling.Witness.labels_length`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/RefinedWitnesses.lean:23:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.vertices_labels`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/RefinedWitnesses.lean:29:28: This simp argument is unused:
+  or_assoc
+
+Hint: Omit it from the simp argument list.
+  simp [̵l̵a̵b̵e̵l̵s̵,̵n̵o̵d̵e̵L̵a̵b̵e̵l̵s̵,̵o̵r̵_̵a̵s̵s̵o̵c̵,̵o̵r̵_̵c̵o̵m̵m̵,̵o̵r̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]̵[̲l̲a̲b̲e̲l̲s̲,̲ ̲n̲o̲d̲e̲L̲a̲b̲e̲l̲s̲,̲ ̲o̲r̲_̲c̲o̲m̲m̲,̲ ̲o̲r̲_̲l̲e̲f̲t̲_̲c̲o̲m̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/RefinedWitnesses.lean:29:37: This simp argument is unused:
+  or_comm
+
+Hint: Omit it from the simp argument list.
+  simp [̵l̵a̵b̵e̵l̵s̵,̵n̵o̵d̵e̵L̵a̵b̵e̵l̵s̵,̵o̵r̵_̵a̵s̵s̵o̵c̵,̵o̵r̵_̵c̵o̵m̵m̵,̵o̵r̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]̵[̲l̲a̲b̲e̲l̲s̲,̲ ̲n̲o̲d̲e̲L̲a̲b̲e̲l̲s̲,̲ ̲o̲r̲_̲a̲s̲s̲o̲c̲,̲ ̲o̲r̲_̲l̲e̲f̲t̲_̲c̲o̲m̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/RefinedWitnesses.lean:49:8: automatically included section variable(s) unused in theorem `Carpooling.Witness.extraBag_card`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/RefinedWitnesses.lean:52:0: automatically included section variable(s) unused in theorem `Carpooling.Witness.edges_support`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1920/1955] Replayed Carpooling.StochasticRefined
+warning: Carpooling/StochasticRefined.lean:103:5: unused variable `hsymm`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Carpooling/StochasticRefined.lean:127:33: This simp argument is unused:
+  div_pow
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵d̵i̵v̵_̵p̵o̵w̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/StochasticRefined.lean:127:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/StochasticRefined.lean:127:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/StochasticRefined.lean:130:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1922/1955] Replayed Carpooling.RefinedBatched
+warning: Carpooling/RefinedBatched.lean:31:0: automatically included section variable(s) unused in theorem `Carpooling.refined_bound_outside_bad_event`:
+  [DecidableEq E]
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1934/1955] Replayed Carpooling.RegularGraphs
+warning: Carpooling/RegularGraphs.lean:10:0: automatically included section variable(s) unused in theorem `Carpooling.regular_edge_balance`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1936/1955] Replayed Carpooling.LowerBound
+warning: Carpooling/LowerBound.lean:37:0: automatically included section variable(s) unused in theorem `Carpooling.equal_pair_of_bounded_integer_positions`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1937/1955] Replayed Carpooling.AdaptiveProbability
+warning: Carpooling/AdaptiveProbability.lean:21:0: automatically included section variable(s) unused in theorem `Carpooling.adaptiveMatchingEvent_eq_singleton`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/AdaptiveProbability.lean:50:20: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  simp [uniformProb,̵F̵i̵n̵t̵y̵p̵e̵.̵c̵a̵r̵d̵_̵f̵u̵n̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/AdaptiveProbability.lean:65:0: automatically included section variable(s) unused in theorem `Carpooling.completeSelected_matches`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/AdaptiveProbability.lean:74:0: automatically included section variable(s) unused in theorem `Carpooling.completeSelected_unique`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1940/1955] Replayed Carpooling.Amplification
+warning: Carpooling/Amplification.lean:16:0: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_mono`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:20:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_const`:
+  [DecidableEq Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:24:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_add`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:28:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_sub`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:32:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_const_mul`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:36:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_mul_const`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:40:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_sum`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+  [DecidableEq J]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] [DecidableEq J] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:45:8: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_indicator`:
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:49:0: automatically included section variable(s) unused in theorem `Carpooling.eventIndicator_mul`:
+  [Fintype Ω]
+  [Nonempty Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Ω] [Nonempty Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Amplification.lean:95:64: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Carpooling/Amplification.lean:95:64: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Carpooling/Amplification.lean:80:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/Amplification.lean:109:0: automatically included section variable(s) unused in theorem `Carpooling.selectedMatchingEvent_union`:
+  [Nonempty E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1941/1955] Replayed Carpooling.ChargedLower
+warning: Carpooling/ChargedLower.lean:42:0: automatically included section variable(s) unused in theorem `Carpooling.UnitMove.embedded_potential_change`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1943/1955] Replayed Carpooling.ScheduledLower
+warning: Carpooling/ScheduledLower.lean:17:0: automatically included section variable(s) unused in theorem `Carpooling.UnitMove.other_component_unchanged`:
+  [Fintype J]
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype J] [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/ScheduledLower.lean:42:42: unused variable `hcut`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [1944/1955] Replayed Carpooling.Occupancy
+warning: Carpooling/Occupancy.lean:27:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Carpooling/Occupancy.lean:43:0: automatically included section variable(s) unused in theorem `Carpooling.labelEvent_eq_selected`:
+  [Nonempty J]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty J] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/Occupancy.lean:57:8: This simp argument is unused:
+  hst
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵s̵t̵,̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵s̵t̵,̵d̵i̵v̵_̵p̵o̵w̵]̵[̲N̲e̲.̲s̲y̲m̲m̲ ̲h̲s̲t̲,̲ ̲d̲i̲v̲_̲p̲o̲w̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/Occupancy.lean:57:24: This simp argument is unused:
+  div_pow
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵s̵t̵,̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵s̵t̵,̵d̵i̵v̵_̵p̵o̵w̵]̵[̲h̲s̲t̲,̲ ̲N̲e̲.̲s̲y̲m̲m̲ ̲h̲s̲t̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/Occupancy.lean:62:0: automatically included section variable(s) unused in theorem `Carpooling.occupancy_eq_sum`:
+  [Nonempty J]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty J] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1945/1955] Replayed Carpooling.FiniteMixtures
+warning: Carpooling/FiniteMixtures.lean:9:0: automatically included section variable(s) unused in theorem `Carpooling.uniformProb_equiv_preimage`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+  [Nonempty Γ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] [Nonempty Γ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/FiniteMixtures.lean:18:0: automatically included section variable(s) unused in theorem `Carpooling.uniformProb_nonneg`:
+  [DecidableEq Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/FiniteMixtures.lean:22:0: automatically included section variable(s) unused in theorem `Carpooling.uniformProb_le_one`:
+  [DecidableEq Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/FiniteMixtures.lean:27:0: automatically included section variable(s) unused in theorem `Carpooling.uniformMean_prod`:
+  [DecidableEq Ω]
+  [Nonempty Ω]
+  [DecidableEq Γ]
+  [Nonempty Γ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Ω] [Nonempty Ω] [DecidableEq Γ] [Nonempty Γ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1947/1955] Replayed Carpooling.DisjointCliques
+warning: Carpooling/DisjointCliques.lean:39:0: automatically included section variable(s) unused in theorem `Carpooling.disjointCliqueEdgeMap_injective`:
+  [Fintype J]
+  [DecidableEq J]
+  [Fintype U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype J] [DecidableEq J] [Fintype U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/DisjointCliques.lean:57:0: automatically included section variable(s) unused in theorem `Carpooling.disjointCliqueEdgeMap_surjective`:
+  [Fintype J]
+  [DecidableEq J]
+  [Fintype U]
+  [DecidableEq U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype J] [DecidableEq J] [Fintype U] [DecidableEq U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1950/1955] Replayed Carpooling.RegularExistence
+warning: Carpooling/RegularExistence.lean:23:35: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/RegularExistence.lean:32:0: automatically included section variable(s) unused in theorem `Carpooling.positiveJump_injective`:
+  [NeZero r]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero r] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1966/1982] Replayed Carpooling.GraphSums
+warning: Carpooling/GraphSums.lean:18:42: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:24:40: Try `simp at hu` instead of `simpa using hu`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:31:42: Try `simp at h` instead of `simpa using h`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:37:40: Try `simp at hu` instead of `simpa using hu`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:9:0: automatically included section variable(s) unused in theorem `Carpooling.sum_regular`:
+  [DecidableEq V]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/GraphSums.lean:77:6: Try `simp at he` instead of `simpa using he`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:84:6: Try `simp at he` instead of `simpa using he`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:58:0: automatically included section variable(s) unused in theorem `Carpooling.sumEdgeMap_injective`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/GraphSums.lean:106:36: Try `simp at hm` instead of `simpa using hm`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:109:36: Try `simp at hm` instead of `simpa using hm`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Carpooling/GraphSums.lean:94:0: automatically included section variable(s) unused in theorem `Carpooling.sumEdgeMap_surjective`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1967/1982] Replayed Carpooling.UniformMaps
+warning: Carpooling/UniformMaps.lean:8:0: automatically included section variable(s) unused in theorem `Carpooling.fiber_card_subtype`:
+  [DecidableEq A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/UniformMaps.lean:23:0: automatically included section variable(s) unused in theorem `Carpooling.constant_fiber_preimage_card`:
+  [DecidableEq A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/UniformMaps.lean:46:0: automatically included section variable(s) unused in theorem `Carpooling.word_fiber_card`:
+  [DecidableEq A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1968/1982] Replayed Carpooling.Pushforward
+warning: Carpooling/Pushforward.lean:11:8: automatically included section variable(s) unused in theorem `Carpooling.extendPosition_at`:
+  [DecidableEq V]
+  [Fintype W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [Fintype W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1969/1982] Replayed Carpooling.MixedSampling
+warning: Carpooling/MixedSampling.lean:25:0: automatically included section variable(s) unused in theorem `Carpooling.mixedClass_fiber`:
+  [DecidableEq U]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq U] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Carpooling/MixedSampling.lean:33:0: automatically included section variable(s) unused in theorem `Carpooling.mixedPairDecoder_fiber`:
+  [DecidableEq U]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq U] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1970/1982] Replayed Carpooling.VaryingSchedule
+warning: Carpooling/VaryingSchedule.lean:13:67: unused variable `hcut`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [1971/1982] Replayed Carpooling.FiniteSampling
+warning: Carpooling/FiniteSampling.lean:15:15: This simp argument is unused:
+  hst
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵s̵t̵,̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵s̵t̵,̵p̵.̵1̵.̵1̵.̵p̵r̵o̵p̵e̵r̵t̵y̵,̵p̵.̵1̵.̵2̵.̵p̵r̵o̵p̵e̵r̵t̵y̵]̵[̲N̲e̲.̲s̲y̲m̲m̲ ̲h̲s̲t̲,̲ ̲p̲.̲1̲.̲1̲.̲p̲r̲o̲p̲e̲r̲t̲y̲,̲ ̲p̲.̲1̲.̲2̲.̲p̲r̲o̲p̲e̲r̲t̲y̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/FiniteSampling.lean:20:66: This simp argument is unused:
+  hst
+
+Hint: Omit it from the simp argument list.
+  simp [̵h̵s̵,̵h̵t̵,̵h̵s̵t̵,̵N̵e̵.̵s̵y̵m̵m̵[̲h̲s̲,̲ ̲h̲t̲,̲ ̲N̲e̲.̲s̲y̲m̲m̲ hst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/FiniteSampling.lean:24:55: This simp argument is unused:
+  hst
+
+Hint: Omit it from the simp argument list.
+  simp [h̵s̵t̵,̵Ne.symm hst]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Carpooling/FiniteSampling.lean:35:14: This simp argument is unused:
+  Ne.symm hst
+
+Hint: Omit it from the simp argument list.
+  simp [hst,̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵s̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [1972/1982] Replayed Carpooling.WeightedOccupancy
+warning: Carpooling/WeightedOccupancy.lean:12:0: automatically included section variable(s) unused in theorem `Carpooling.classCount_variance`:
+  [Fintype J]
+  [Nonempty J]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype J] [Nonempty J] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1973/1982] Replayed Carpooling.CountBounds
+warning: Carpooling/CountBounds.lean:15:0: automatically included section variable(s) unused in theorem `Carpooling.lowCount_probability`:
+  [Fintype J]
+  [DecidableEq J]
+  [Nonempty J]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype J] [DecidableEq J] [Nonempty J] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1976/1982] Replayed Carpooling.PaddingParameters
+warning: Carpooling/PaddingParameters.lean:39:34: unused variable `ha`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [1980/1982] Built Carpooling.LowerCorollaries (2.5s)
+✔ [1981/1982] Built Carpooling (1.5s)
+Build completed successfully (1982 jobs).
+'Carpooling.topSum_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.spreadness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.potential_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.positive_cube_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.lemma_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.greedy_requests_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.closed_component_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.theorem_1_1.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {T : ℕ} (R : Carpooling.Run V T)
+  (hinit : ∀ (k : V), R.d 0 k = 0) {t : ℕ} (ht : t ≤ T) (i : V) : |R.d t i| ≤ min (4 * ↑t ^ (1 / 3)) ↑(Fintype.card V)
+Carpooling.lemma_3_1.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {T : ℕ} (R : Carpooling.Run V T)
+  (hinit : ∀ (k : V), R.d 0 k ≤ 0) (i : V) :
+  R.d T i ≤ min (4 * ↑(Carpooling.expandingCount R T) ^ (1 / 3)) ↑(Fintype.card V)
+Carpooling.greedy_requests_upper_bound.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V]
+  (requests : ℕ → Carpooling.Request V) (t : ℕ) (i : V) :
+  |Carpooling.states requests t i| ≤ min (4 * ↑t ^ (1 / 3)) ↑(Fintype.card V)
+Carpooling.closed_component_bound.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {T L : ℕ} (R : Carpooling.Run V T)
+  (C : Finset V) (hC : R.Closed C) (hinit : ∀ (k : V), R.d 0 k = 0) (hL : Carpooling.internalCount R C T ≤ L) {i : V}
+  (hi : i ∈ C) : |R.d T i| ≤ 4 * ↑L ^ (1 / 3)
+'Carpooling.lemma_4_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.local_tree_like_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.Witness.spanning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.occurrence_probability_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.Witness.families_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.refined_cover_of_forest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.stochastic_upper_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.stochastic_refined_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.stochastic_refined_high_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_graph_stochastic_basic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_graph_stochastic_batched' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_graph_stochastic_refined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_graph_stochastic_refined_batched' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.aggregate_bound_outside_bad_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.refined_aggregate_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.regular_graph_stochastic_basic.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  [DecidableRel G.Adj] [Nonempty ↑G.edgeSet] {Δ : ℕ} (hreg : G.IsRegularOfDegree Δ) (hpos : 0 < Δ) (T : ℕ)
+  (hT : 16 * T ≤ Fintype.card V) (hn : 0 < Fintype.card V) :
+  Carpooling.uniformProb
+      (Carpooling.badDiscrepancyEvent (fun v => G.neighborFinset v) (fun e => ↑e) T
+        (Carpooling.stochasticThreshold (Fintype.card V))) ≤
+    1 / ↑(Fintype.card V)
+Carpooling.regular_graph_stochastic_refined.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  [DecidableRel G.Adj] [Nonempty ↑G.edgeSet] {Δ : ℕ} (hreg : G.IsRegularOfDegree Δ) (hpos : 0 < Δ) (T : ℕ)
+  (hT : 16 * T ≤ Fintype.card V) (hn : 0 < Fintype.card V) (hlarge : 256 ≤ Δ)
+  (hdegree : Carpooling.stochasticThreshold (Fintype.card V) ^ 3 ≤ Δ) :
+  Carpooling.uniformProb
+      (Carpooling.badRefinedEvent (fun v => G.neighborFinset v) (fun e => ↑e) T
+        (Carpooling.stochasticThreshold (Fintype.card V)) (Carpooling.refinedThreshold (Fintype.card V) Δ)) ≤
+    3 / ↑(Fintype.card V)
+Carpooling.regular_graph_stochastic_refined_batched.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  [DecidableRel G.Adj] [Nonempty ↑G.edgeSet] {Δ : ℕ} (hreg : G.IsRegularOfDegree Δ) (hpos : 0 < Δ) (K B : ℕ)
+  (hB : 16 * B ≤ Fintype.card V) (hn : 0 < Fintype.card V) (hlarge : 256 ≤ Δ)
+  (hdegree : Carpooling.stochasticThreshold (Fintype.card V) ^ 3 ≤ Δ) :
+  Carpooling.uniformProb
+      (Carpooling.badRefinedBatchEvent (fun v => G.neighborFinset v) (fun e => ↑e) K B
+        (Carpooling.stochasticThreshold (Fintype.card V)) (Carpooling.refinedThreshold (Fintype.card V) Δ)) ≤
+    3 * ↑K / ↑(Fintype.card V)
+Carpooling.stochastic_refined_tail.{u_1, u_2} {V : Type u_1} [Fintype V] [DecidableEq V] {E : Type u_2} [Fintype E]
+  [DecidableEq E] [Nonempty E] (N : V → Finset V) {Δ : ℕ} (hΔ : ∀ (v : V), (N v).card ≤ Δ) (hpos : 0 < Δ)
+  (hsymm : ∀ {u v : V}, v ∈ N u → u ∈ N v) (g : E → Sym2 V) (hg : Function.Injective g)
+  (hbalance : 2 * Fintype.card E = Fintype.card V * Δ) (T L p : ℕ) (hT : 16 * T ≤ Fintype.card V) :
+  Carpooling.uniformProb (Carpooling.badRefinedEvent N g T L p) ≤
+    2 * ↑(Fintype.card V) / 2 ^ L + 2 * ↑(Fintype.card V) * (↑L ^ 2 / (8 * ↑Δ)) ^ p
+Carpooling.refined_aggregate_bound.{u_1, u_2} {V : Type u_1} {E : Type u_2} [Fintype V] [DecidableEq V] [Fintype E]
+  [DecidableEq E] [Nonempty E] {K B L p : ℕ} (N : V → Finset V) (g : E → Sym2 V) (x : Fin K → Fin B → E)
+  (hx : x ∉ Carpooling.badRefinedBatchEvent N g K B L p) (R : Fin K → Carpooling.Run V B)
+  (hi : ∀ (j : Fin K) (k : V), (R j).d 0 k = 0)
+  (hAdj : ∀ (j : Fin K) (s : ℕ) (hs : s < B), ((R j).step s hs).v ∈ N ((R j).step s hs).u)
+  (hbag : ∀ (j : Fin K), (R j).edgeBag B = Carpooling.sampleBag g (x j)) (cutoff : Fin K → ℕ)
+  (hcut : ∀ (j : Fin K), cutoff j ≤ B) (k : V) :
+  |∑ j, (R j).d (cutoff j) k| ≤ ↑K * (4 * ↑p ^ (1 / 3) + 2 * ↑(Nat.log 2 L))
+'Carpooling.theorem_1_2_basic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_2_refined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_2_basic_greedy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_2_refined_greedy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.states_prefix_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.theorem_1_2_basic_greedy.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  [DecidableRel G.Adj] [Nonempty ↑G.edgeSet] {Δ : ℕ} (hreg : G.IsRegularOfDegree Δ) (hpos : 0 < Δ) (K B : ℕ)
+  (hB : 16 * B ≤ Fintype.card V) (hn : 0 < Fintype.card V) :
+  ∃ good,
+    1 - ↑K / ↑(Fintype.card V) ≤ Carpooling.uniformProb good ∧
+      ∀ x ∈ good,
+        ∀ (q : Fin K → ℕ → Carpooling.Request V),
+          (∀ (j : Fin K), ∀ s < B, G.Adj (q j s).a (q j s).b) →
+            (∀ (j : Fin K), (Carpooling.runRequests (q j) B).edgeBag B = Carpooling.sampleBag (fun e => ↑e) (x j)) →
+              ∀ (t : ℕ) (v : V),
+                |Carpooling.batchedGreedyState B q t v| ≤
+                  ↑K * (4 * ↑(Carpooling.stochasticThreshold (Fintype.card V)) ^ (1 / 3))
+Carpooling.theorem_1_2_refined_greedy.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  [DecidableRel G.Adj] [Nonempty ↑G.edgeSet] {Δ : ℕ} (hreg : G.IsRegularOfDegree Δ) (hpos : 0 < Δ) (K B : ℕ)
+  (hB : 16 * B ≤ Fintype.card V) (hn : 0 < Fintype.card V) (hlarge : 256 ≤ Δ)
+  (hdegree : Carpooling.stochasticThreshold (Fintype.card V) ^ 3 ≤ Δ) :
+  ∃ good,
+    1 - 3 * ↑K / ↑(Fintype.card V) ≤ Carpooling.uniformProb good ∧
+      ∀ x ∈ good,
+        ∀ (q : Fin K → ℕ → Carpooling.Request V),
+          (∀ (j : Fin K), ∀ s < B, G.Adj (q j s).a (q j s).b) →
+            (∀ (j : Fin K), (Carpooling.runRequests (q j) B).edgeBag B = Carpooling.sampleBag (fun e => ↑e) (x j)) →
+              ∀ (t : ℕ) (v : V),
+                |Carpooling.batchedGreedyState B q t v| ≤
+                  ↑K *
+                    (4 * ↑(Carpooling.refinedThreshold (Fintype.card V) Δ) ^ (1 / 3) +
+                      2 * ↑(Nat.log 2 (Carpooling.stochasticThreshold (Fintype.card V))))
+'Carpooling.UnitMove.potential_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.equal_pair_of_bounded_integer_positions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.equal_endpoint_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.lowerStates_prefix_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.adversarial_cubic_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.adversarial_lower_bound_four_cubes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.adaptive_matching_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.selectedMatchingEvent_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.selected_matching_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.complete_graph_local_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.clique_local_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.adversarial_lower_bound_four_cubes (h : ℕ) (hh : 0 < h) (directions : ℕ → Bool) :
+  ∃ t ≤ 4 * h ^ 3, ∃ v, ↑h ≤ |Carpooling.lowerStates h directions t v|
+Carpooling.selected_matching_probability.{u_1} {E : Type u_1} [Fintype E] [DecidableEq E] [Nonempty E] {T : ℕ}
+  (I : Finset (Fin T)) (P : (t : Fin T) → (Fin ↑t → E) → E) :
+  Carpooling.uniformProb (Carpooling.selectedMatchingEvent I P) = 1 / ↑(Fintype.card E) ^ I.card
+Carpooling.clique_local_lower_probability (h T : ℕ) (hT : ↑(2 * h + 2) * ↑h ^ 2 < 2 * ↑T)
+  (R : (Fin T → ↑(Carpooling.CliqueEdge h)) → Carpooling.IntegerRun (Fin (2 * h + 2)) T)
+  (hi : ∀ (x : Fin T → ↑(Carpooling.CliqueEdge h)) (v : Fin (2 * h + 2)), (R x).d 0 v = 0)
+  (hrequest :
+    ∀ (x : Fin T → ↑(Carpooling.CliqueEdge h)) (t : ℕ) (ht : t < T),
+      s(((R x).step t ht).u, ((R x).step t ht).v) = ↑(x ⟨t, ht⟩))
+  (hcausal :
+    ∀ (t : Fin T) (x y : Fin T → ↑(Carpooling.CliqueEdge h)),
+      (∀ (s : Fin ↑t), x ⟨↑s, ⋯⟩ = y ⟨↑s, ⋯⟩) → (R x).d ↑t = (R y).d ↑t) :
+  1 / ↑((2 * h + 2).choose 2) ^ T ≤ Carpooling.uniformProb (Carpooling.integerDiscrepancyEvent R h)
+'Carpooling.embedded_equal_endpoint_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.embedded_local_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.pairwise_event_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.adaptive_prescription_amplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.charged_potential_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.exists_prefix_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.scheduled_targets_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.scheduled_cliques_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.scheduled_targets_lower_probability_of_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.embedded_local_lower_probability.{u_1, u_3} {V : Type u_1} [Fintype V] [DecidableEq V] {E : Type u_3}
+  [Fintype E] [DecidableEq E] [Nonempty E] (h : ℕ) (f : Fin (2 * h + 2) ↪ V) (g : E → Sym2 V)
+  (encode : (a b : Fin (2 * h + 2)) → a ≠ b → E)
+  (hencode : ∀ (a b : Fin (2 * h + 2)) (hab : a ≠ b), g (encode a b hab) = s(f a, f b)) (T : ℕ)
+  (hT : ↑(2 * h + 2) * ↑h ^ 2 < 2 * ↑T) (R : (Fin T → E) → Carpooling.IntegerRun V T)
+  (hi : ∀ (x : Fin T → E) (v : V), (R x).d 0 v = 0)
+  (hrequest : ∀ (x : Fin T → E) (t : ℕ) (ht : t < T), s(((R x).step t ht).u, ((R x).step t ht).v) = g (x ⟨t, ht⟩))
+  (hcausal : ∀ (t : Fin T) (x y : Fin T → E), (∀ (s : Fin ↑t), x ⟨↑s, ⋯⟩ = y ⟨↑s, ⋯⟩) → (R x).d ↑t = (R y).d ↑t) :
+  1 / ↑(Fintype.card E) ^ T ≤ Carpooling.uniformProb (Carpooling.integerDiscrepancyEvent R h)
+Carpooling.adaptive_prescription_amplification.{u_2, u_3} {J : Type u_2} [Fintype J] [DecidableEq J] {E : Type u_3}
+  [Fintype E] [DecidableEq E] [Nonempty E] {T L : ℕ} (I : J → Finset (Fin T)) (hJ : 0 < Fintype.card J)
+  (hdisjoint : ∀ (j k : J), j ≠ k → Disjoint (I j) (I k)) (hsize : ∀ (j : J), (I j).card = L)
+  (P : (t : Fin T) → (Fin ↑t → E) → E) :
+  Carpooling.uniformProb (Carpooling.noHitEvent fun j => Carpooling.selectedMatchingEvent (I j) P) ≤
+    ↑(Fintype.card E) ^ L / ↑(Fintype.card J)
+Carpooling.scheduled_targets_lower_probability_of_counts.{u_1, u_2, u_3, u_4} {J : Type u_1} {U : Type u_2}
+  {E : Type u_3} [Fintype J] [DecidableEq J] [Fintype U] [DecidableEq U] [Fintype E] [DecidableEq E] [Nonempty E]
+  {K : Type u_4} [Fintype K] [DecidableEq K] {T L h : ℕ} (hK : 0 < Fintype.card K) (target : K ↪ J)
+  (f : Fin (2 * h + 2) ↪ U) (g : E → Sym2 U) (encode : (a b : Fin (2 * h + 2)) → a ≠ b → E)
+  (hencode : ∀ (a b : Fin (2 * h + 2)) (hab : a ≠ b), g (encode a b hab) = s(f a, f b)) (schedule : Fin T → J)
+  (hcount : ∀ (k : K), L ≤ {t | schedule t = target k}.card) (hL : ↑(2 * h + 2) * ↑h ^ 2 < 2 * ↑L)
+  (R : (Fin T → E) → Carpooling.IntegerRun (J × U) T) (hi : ∀ (x : Fin T → E) (v : J × U), (R x).d 0 v = 0)
+  (hrequest :
+    ∀ (x : Fin T → E) (t : Fin T),
+      s(((R x).step ↑t ⋯).u, ((R x).step ↑t ⋯).v) = Sym2.map (fun u => (schedule t, u)) (g (x t)))
+  (hcausal : ∀ (t : Fin T) (x y : Fin T → E), (∀ (s : Fin ↑t), x ⟨↑s, ⋯⟩ = y ⟨↑s, ⋯⟩) → (R x).d ↑t = (R y).d ↑t) :
+  Carpooling.uniformProb (Finset.univ \ Carpooling.integerDiscrepancyEvent R h) ≤
+    ↑(Fintype.card E) ^ L / ↑(Fintype.card K)
+'Carpooling.indicator_sum_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.occupancy_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.underfilled_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.few_good_labels_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.uniformProb_mixture_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.uniformProb_equiv_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.iid_cliques_lower_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.disjointCliques_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.disjointCliques_edge_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_cliques_stochastic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.lower_failure_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.regular_cliques_lower_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.regular_cliques_stochastic_lower.{u_1, u_2} {J : Type u_1} {U : Type u_2} [Fintype J] [DecidableEq J]
+  [Nonempty J] [Fintype U] [DecidableEq U] [Nonempty ↑⊤.edgeSet] {L h : ℕ} (f : Fin (2 * h + 2) ↪ U)
+  (hNL : 2 * L ≤ Fintype.card U) (hL : ↑(2 * h + 2) * ↑h ^ 2 < 2 * ↑L)
+  (R :
+    (Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet) →
+      Carpooling.IntegerRun (J × U) (Fintype.card J * Fintype.card U))
+  (hi :
+    ∀ (x : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet) (v : J × U), (R x).d 0 v = 0)
+  (hrequest :
+    ∀ (x : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet)
+      (t : Fin (Fintype.card J * Fintype.card U)), s(((R x).step ↑t ⋯).u, ((R x).step ↑t ⋯).v) = ↑(x t))
+  (hcausal :
+    ∀ (t : Fin (Fintype.card J * Fintype.card U))
+      (x y : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet),
+      (∀ (i : Fin ↑t), x ⟨↑i, ⋯⟩ = y ⟨↑i, ⋯⟩) → (R x).d ↑t = (R y).d ↑t) :
+  Carpooling.uniformProb (Finset.univ \ Carpooling.integerDiscrepancyEvent R h) ≤
+    8 / ↑(Fintype.card U) + 2 * ↑((Fintype.card U).choose 2) ^ L / ↑(Fintype.card J)
+Carpooling.regular_cliques_lower_logarithmic.{u_1, u_2} {J : Type u_1} {U : Type u_2} [Fintype J] [DecidableEq J]
+  [Nonempty J] [Fintype U] [DecidableEq U] [Nonempty ↑⊤.edgeSet] {h : ℕ} (hh : 0 < h)
+  (hsize : 6 * h ^ 3 ≤ Fintype.card U) (hlog : 12 * h ^ 3 ≤ Nat.log (Fintype.card U) (Fintype.card J))
+  (R :
+    (Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet) →
+      Carpooling.IntegerRun (J × U) (Fintype.card J * Fintype.card U))
+  (hi :
+    ∀ (x : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet) (v : J × U), (R x).d 0 v = 0)
+  (hrequest :
+    ∀ (x : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet)
+      (t : Fin (Fintype.card J * Fintype.card U)), s(((R x).step ↑t ⋯).u, ((R x).step ↑t ⋯).v) = ↑(x t))
+  (hcausal :
+    ∀ (t : Fin (Fintype.card J * Fintype.card U))
+      (x y : Fin (Fintype.card J * Fintype.card U) → ↑Carpooling.disjointCliques.edgeSet),
+      (∀ (i : Fin ↑t), x ⟨↑i, ⋯⟩ = y ⟨↑i, ⋯⟩) → (R x).d ↑t = (R y).d ↑t) :
+  Carpooling.uniformProb (Finset.univ \ Carpooling.integerDiscrepancyEvent R h) ≤ 10 / ↑(Fintype.card U)
+'Carpooling.jumpGraph_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.exists_regular_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.evaluation_pair_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.classCount_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.fewPopulated_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.scheduled_varying_targets_of_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.uniformProb_constant_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.word_fiber_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.pushforward_discrepancy_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.sum_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.mixedPairDecoder_constant_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.paddedDecoder_constant_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.padded_graph_stochastic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.padding_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.cubicHeight_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.cubicHeight_covers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.padding_log_compare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.padded_failure_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.padded_graph_lower_logarithmic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.IntegerRun.first_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.cubic_log_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.theorem_1_3_with_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Carpooling.randomized_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Carpooling.theorem_1_3 (n d a : ℕ) (hd : 2 ≤ d) (hn : d < n) (heven : n * d % 2 = 0) (ha48 : 48 ≤ a)
+  (hscale : 6 * Nat.log 2 n ≤ a * (d + 1)) : ∃ G h, Carpooling.StochasticLowerGuarantee n d a h G
+Carpooling.theorem_1_3_with_error (n d a k : ℕ) (hd : 2 ≤ d) (hn : d < n) (heven : n * d % 2 = 0) (ha48 : 48 ≤ a)
+  (hscale : 6 * Nat.log 2 n ≤ a * (d + 1)) (hk : 0 < k) (hlarge : 2 ^ (2 * a * k) ≤ n) :
+  ∃ G h,
+    Carpooling.StochasticLowerGuarantee n d a h G ∧
+      ∀ (R : Carpooling.UnitOnlineRule G.graph (Fintype.card G.Vertex)),
+        Carpooling.uniformProb (Finset.univ \ Carpooling.integerDiscrepancyEvent R.run h) ≤ 1 / ↑k
+def Carpooling.StochasticLowerGuarantee : ℕ → ℕ → ℕ → ℕ → Carpooling.FiniteCarpoolGraph → Prop :=
+fun n d a h G =>
+  Fintype.card G.Vertex = n ∧
+    G.graph.IsRegularOfDegree d ∧
+      0 < h ∧
+        (Real.log ↑n / Real.log ↑d) ^ (1 / 3) ≤ (64 * ↑a) ^ (1 / 3) * ↑h ∧
+          ∀ (R : Carpooling.UnitOnlineRule G.graph (Fintype.card G.Vertex)),
+            Carpooling.uniformProb (Finset.univ \ Carpooling.integerDiscrepancyEvent R.run h) ≤ 10 / ↑(d + 1)
+Build and axiom audit passed.
