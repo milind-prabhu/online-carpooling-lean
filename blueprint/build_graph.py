@@ -102,11 +102,14 @@ def reduce_edges(nodes,edges):
 
 node_ids={n:'decl_'+str(i) for i,n in enumerate(sorted(records))}
 nodes={}
+summaries = json.loads((HERE/'descriptions.json').read_text())
+assert records.keys() <= summaries.keys(), 'Missing node descriptions'
 for n,r in records.items():
     short=n.removeprefix('Carpooling.')
     nodes[node_ids[n]]={
       'id':node_ids[n], 'name':n, 'label':friendly.get(short,short),
       'kind':'theorem' if raw[n]['kind']=='theorem' else 'definition',
+      'summary':summaries[n],
       'statement':raw[n]['statement'], 'file':r['file'], 'line':r['line'],
       'source':r['source'], 'checked':True,
     }
