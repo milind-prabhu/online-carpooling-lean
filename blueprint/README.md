@@ -1,6 +1,6 @@
 # Online carpooling proof blueprint
 
-Open `generated/Online_Carpooling_Blueprint.html` in a browser. The file is self-contained and works offline. It includes an overview, three proof-specific views, and all 420 explicitly named declarations. Click a node for its compiled Lean statement, source, displayed prerequisites and consequences. Search, pan, zoom, and ancestor/descendant highlighting are available.
+Open the [interactive proof graph](https://milind-prabhu.github.io/online-carpooling-lean/), or open `generated/Online_Carpooling_Blueprint.html` locally in a browser. The file is self-contained and works offline. It includes an overview, three proof-specific views, and all 420 explicitly named declarations. Click a node for its compiled Lean statement, source, displayed prerequisites and consequences. Search, pan, zoom, and ancestor/descendant highlighting are available.
 
 The visual convention follows the [Polynomial Freiman–Ruzsa blueprint](https://teorth.github.io/pfr/blueprint/dep_graph_document.html): ellipses for theorems and lemmas, boxes for definitions, and green for checked declarations. Double borders identify the four main theorem declarations. This is an independent standalone renderer, rather than a deployment of Lean Blueprint.
 
